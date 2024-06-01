@@ -1,0 +1,41 @@
+<?php
+
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\WebController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::group(['as' => 'web.'], function () {
+    Route::get('/', [WebController::class, 'index'])->name('index');
+    Route::get('/about-us', [WebController::class, 'about_us'])->name('about_us');
+    Route::get('/contact-us', [WebController::class, 'contact_us'])->name('contact_us');
+    Route::post('/contact-us', [WebController::class, 'contact_us_store'])->name('contact_us_store');
+    Route::get('/complaints', [WebController::class, 'complaints'])->name('complaints.index');
+    Route::post('/complaints', [WebController::class, 'complaints_store'])->name('complaints.store');
+    Route::resource('news', NewsController::class);
+    Route::group(['as' => 'vendor.', 'prefix' => 'vendor'], function () {
+        Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
+        Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');
+    });
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
