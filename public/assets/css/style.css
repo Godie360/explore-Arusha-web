@@ -1548,11 +1548,14 @@ ul.dashborad-menus {
     color: #fff;
 }
 .btn-secondary {
-    background: #f7f7ff;
+
+    background-color: #f7f7ff;
     border: 1px solid #f7f7ff;
-    box-shadow: inset 0 0 0 0 #fff;
+    box-shadow: inset 0 0 0 #fff;
     color: #374b5c;
-    border-radius: 10px;
+
+    border-radius: 5px;
+    padding: 10px 34px;
 }
 .btn-secondary:hover {
     background-color: #fff;
@@ -21472,4 +21475,8 @@ footer .footer-subscribe p {
     border-color: #04425a;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(4,66,90, .25);
+}
+
+.pt-100{
+    padding-top:120px;
 }

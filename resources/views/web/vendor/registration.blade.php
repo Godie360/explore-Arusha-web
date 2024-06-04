@@ -5,14 +5,12 @@
             #msform {
                 text-align: center;
                 position: relative;
-                margin-top: 20px;
+                margin-top: 10px;
             }
 
             #msform fieldset .form-card {
-                /* background: white; */
                 border: 0 none;
                 border-radius: 0px;
-                /* box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2); */
                 padding: 20px 20px 20px 20px;
                 box-sizing: border-box;
                 width: 100%;
@@ -28,12 +26,9 @@
                 width: 100%;
                 margin: 0;
                 padding-bottom: 20px;
-
-                /*stacking fieldsets above each other*/
                 position: relative;
             }
 
-            /*Hide all except first fieldset*/
             #msform fieldset:not(:first-of-type) {
                 display: none;
             }
@@ -41,46 +36,6 @@
             #msform fieldset .form-card {
                 text-align: left;
                 color: #9E9E9E;
-            }
-
-
-
-
-
-            /*Blue Buttons*/
-            #msform .action-button {
-                width: 100px;
-                background: skyblue;
-                font-weight: bold;
-                color: white;
-                border: 0 none;
-                border-radius: 0px;
-                cursor: pointer;
-                padding: 10px 5px;
-                margin: 10px 5px;
-            }
-
-            #msform .action-button:hover,
-            #msform .action-button:focus {
-                box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue;
-            }
-
-            /*Previous Buttons*/
-            #msform .action-button-previous {
-                width: 100px;
-                background: #616161;
-                font-weight: bold;
-                color: white;
-                border: 0 none;
-                border-radius: 0px;
-                cursor: pointer;
-                padding: 10px 5px;
-                margin: 10px 5px;
-            }
-
-            #msform .action-button-previous:hover,
-            #msform .action-button-previous:focus {
-                box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
             }
 
             /*Dropdown List Exp Date*/
@@ -93,7 +48,7 @@
             }
 
             select.list-dt:focus {
-                border-bottom: 2px solid skyblue;
+                border-bottom: 2px solid #64bd4f;
             }
 
             /*The background card*/
@@ -102,6 +57,11 @@
                 border: none;
                 border-radius: 0.5rem;
                 position: relative;
+            }
+
+            .card.vendor-registration .card-header {
+                border: none;
+                text-align: center;
             }
 
             /*FieldSet headings*/
@@ -135,17 +95,17 @@
             /*Icons in the ProgressBar*/
             #progressbar #account:before {
                 font-family: FontAwesome;
-                content: "\f023";
+                content: "\f1ad";
             }
 
             #progressbar #personal:before {
                 font-family: FontAwesome;
-                content: "\f007";
+                content: "\f2b9";
             }
 
             #progressbar #payment:before {
                 font-family: FontAwesome;
-                content: "\f09d";
+                content: "\f0c0";
             }
 
             #progressbar #confirm:before {
@@ -182,27 +142,20 @@
             /*Color number of the step and the connector before it*/
             #progressbar li.active:before,
             #progressbar li.active:after {
-                background: skyblue;
+                background: #64bd4f;
             }
-
-
         </style>
     @endpush
     @push('scripts')
-        <script>
+        {{-- <script>
             $(document).ready(function() {
-
                 var current_fs, next_fs, previous_fs; //fieldsets
                 var opacity;
-
                 $(".next").click(function() {
-
                     current_fs = $(this).parent();
                     next_fs = $(this).parent().next();
-
                     //Add Class Active
                     $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
                     //show the next fieldset
                     next_fs.show();
                     //hide the current fieldset with style
@@ -212,7 +165,93 @@
                         step: function(now) {
                             // for making fielset appear animation
                             opacity = 1 - now;
+                            current_fs.css({
+                                'display': 'none',
+                                'position': 'relative'
+                            });
+                            next_fs.css({
+                                'opacity': opacity
+                            });
+                        },
+                        duration: 600
+                    });
+                });
+                $(".previous").click(function() {
+                    current_fs = $(this).parent();
+                    previous_fs = $(this).parent().prev();
+                    //Remove class active
+                    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+                    //show the previous fieldset
+                    previous_fs.show();
+                    //hide the current fieldset with style
+                    current_fs.animate({
+                        opacity: 0
+                    }, {
+                        step: function(now) {
+                            // for making fielset appear animation
+                            opacity = 1 - now;
+                            current_fs.css({
+                                'display': 'none',
+                                'position': 'relative'
+                            });
+                            previous_fs.css({
+                                'opacity': opacity
+                            });
+                        },
+                        duration: 600
+                    });
+                });
+                $('.radio-group .radio').click(function() {
+                    $(this).parent().find('.radio').removeClass('selected');
+                    $(this).addClass('selected');
+                });
+                $(".submit").click(function() {
+                    return false;
+                })
+            });
+        </script> --}}
 
+        <script>
+            $(document).ready(function() {
+                var current_fs, next_fs, previous_fs; //fieldsets
+                var opacity;
+                // Function to validate required fields
+                function validateFields() {
+                    var isValid = true;
+                    current_fs.find('input[required], select[required]').each(function() {
+                        if ($(this).val() === '') {
+                            isValid = false;
+                            $(this).addClass('is-invalid'); // Add 'invalid' class if validation fails
+                        } else {
+                            $(this).removeClass('is-invalid'); // Remove 'invalid' class if validation passes
+                        }
+                    });
+                    return isValid;
+                }
+
+                $(".next").click(function() {
+                    current_fs = $(this).parent();
+                    next_fs = $(this).parent().next();
+
+                    // Validate fields before proceeding
+                    if (!validateFields()) {
+                        alert("Please fill all required fields.");
+                        return false; // Prevent moving to the next fieldset
+                    }
+
+                    // Add Class Active
+                    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                    // Show the next fieldset
+                    next_fs.show();
+
+                    // Hide the current fieldset with style
+                    current_fs.animate({
+                        opacity: 0
+                    }, {
+                        step: function(now) {
+                            // for making fieldset appear animation
+                            opacity = 1 - now;
                             current_fs.css({
                                 'display': 'none',
                                 'position': 'relative'
@@ -226,24 +265,22 @@
                 });
 
                 $(".previous").click(function() {
-
                     current_fs = $(this).parent();
                     previous_fs = $(this).parent().prev();
 
-                    //Remove class active
+                    // Remove class active
                     $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-                    //show the previous fieldset
+                    // Show the previous fieldset
                     previous_fs.show();
 
-                    //hide the current fieldset with style
+                    // Hide the current fieldset with style
                     current_fs.animate({
                         opacity: 0
                     }, {
                         step: function(now) {
-                            // for making fielset appear animation
+                            // for making fieldset appear animation
                             opacity = 1 - now;
-
                             current_fs.css({
                                 'display': 'none',
                                 'position': 'relative'
@@ -263,8 +300,7 @@
 
                 $(".submit").click(function() {
                     return false;
-                })
-
+                });
             });
         </script>
     @endpush
@@ -285,18 +321,14 @@
             </div>
         </div>
     </div>
-
-    <section class="section">
+    <section class="section ">
         <div class="container">
             <!-- MultiStep Form -->
-            <div class="container-fluid" id="grad1">
-                <div class="card">
+            <div class="container-fluid" id="">
+                <div class="card vendor-registration">
                     <div class="card-header">
                         <h2><strong>Vendor Registration Form</strong></h2>
-                        <p>Fill all form field to go to next step</p>
                     </div>
-
-
                     <div class="row">
                         <div class="col-md-12 mx-0">
                             <form id="msform">
@@ -327,34 +359,38 @@
                                                 </select>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="company_name">Company Name</label>
+                                                <label class="form-label required" for="company_name">Company
+                                                    Name</label>
                                                 <input type="text" class="form-control" id="company_name"
-                                                    name="company_name" placeholder="Enter Company Name">
+                                                    name="company_name" placeholder="Enter Company Name" required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="business_name">Business Name</label>
+                                                <label class="form-label required" for="business_name">Business
+                                                    Name</label>
                                                 <input type="text" class="form-control" id="business_name"
-                                                    name="business_name" placeholder="Enter Business Name">
+                                                    name="business_name" placeholder="Enter Business Name" required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="year_of_establishment">Year of
+                                                <label class="form-label required" for="year_of_establishment">Year of
                                                     Establishment</label>
                                                 <input type="number" class="form-control" id="year_of_establishment"
                                                     name="year_of_establishment"
-                                                    placeholder="Enter Year of Establishment">
+                                                    placeholder="Enter Year of Establishment" required>
                                             </div>
-
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="number_of_employees">Number of
+                                                <label class="form-label required" for="number_of_employees">Number of
                                                     Employees</label>
                                                 <input type="number" class="form-control" id="number_of_employees"
-                                                    name="number_of_employees" placeholder="Enter Number of Employees">
+                                                    name="number_of_employees" placeholder="Enter Number of Employees"
+                                                    required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="business_name">Company / Business
+                                                <label class="form-label required" for="business_name">Company /
+                                                    Business
                                                     Registration Number</label>
                                                 <input type="text" class="form-control" id="business_name"
-                                                    name="business_name" placeholder="Enter Registration Number">
+                                                    name="business_name" placeholder="Enter Registration Number"
+                                                    required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
                                                 <label class="form-label" for="business_name">Tax Identification
@@ -363,23 +399,23 @@
                                                     name="business_name" placeholder="Enter TIN">
                                             </div>
                                         </div>
-
                                     </div>
-                                    <input type="button" name="next" class="next action-button" value="Next Step" />
+                                    <input type="button" name="next" class="next btn btn-primary"
+                                        value="Next Step" />
                                 </fieldset>
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Contact & Address Information</h2>
                                         <div class="row">
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="phone">Company Phone Number</label>
+                                                <label class="form-label required" for="phone">Company Phone Number</label>
                                                 <input type="text" class="form-control" id="phone"
-                                                    name="phone" placeholder="Enter Phone Number">
+                                                    name="phone" placeholder="Enter Phone Number" required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="email">Company Email Address</label>
+                                                <label class="form-label required" for="email">Company Email Address</label>
                                                 <input type="email" class="form-control" id="email"
-                                                    name="email" placeholder="Enter Email Address">
+                                                    name="email" placeholder="Enter Email Address" required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
                                                 <label class="form-label" for="website">Company Website</label>
@@ -413,16 +449,16 @@
                                                     name="street_address" placeholder="Enter Street Address">
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="physical_address">Physical
+                                                <label class="form-label required" for="physical_address">Physical
                                                     Address</label>
-                                                <input type="text" class="form-control" id="physical_address"
-                                                    name="physical_address" placeholder="Enter Physical Address">
+                                                <input type="text" class="form-control required" id="physical_address"
+                                                    name="physical_address" placeholder="Enter Physical Address" required>
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous"
+                                    <input type="button" name="previous" class="previous btn btn-secondary"
                                         value="Previous" />
-                                    <input type="button" name="next" class="next action-button"
+                                    <input type="button" name="next" class="next btn btn-primary"
                                         value="Next Step" />
                                 </fieldset>
                                 <fieldset>
@@ -443,7 +479,6 @@
                                                     name="contact_person_title"
                                                     placeholder="Enter Contact Person Title">
                                             </div>
-
                                             <div class="form-group mt-2 col-md-4">
                                                 <label class="form-label" for="contact_person_email">Contact Person
                                                     Email</label>
@@ -451,7 +486,6 @@
                                                     name="contact_person_email"
                                                     placeholder="Enter Contact Person Email">
                                             </div>
-
                                             <div class="form-group mt-2 col-md-4">
                                                 <label class="form-label" for="contact_person_phone">Contact Person
                                                     Phone</label>
@@ -461,17 +495,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous"
+                                    <input type="button" name="previous" class="previous btn btn-secondary"
                                         value="Previous" />
-                                    <input type="button" name="make_payment" class="next action-button"
+                                    <input type="button" name="make_payment" class="next btn btn-primary"
                                         value="Confirm" />
                                 </fieldset>
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title text-center">Success !</h2>
                                         <br><br>
-                                        <div class="row justify-content-center">
-                                            <div class="col-3">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-3 d-flex justify-content-center">
                                                 <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
                                                     class="fit-image">
                                             </div>
@@ -488,7 +522,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

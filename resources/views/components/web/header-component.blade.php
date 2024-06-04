@@ -44,8 +44,8 @@
             </div>
             <div class="d-flex align-items-center block-e">
                 <div class="cta-btn">
-                    <a href="{{ route('login') }}" class="btn">sign in /</a>
-                    <a href="{{ route('register') }}" class="btn ms-1"> register</a>
+                    <a href="{{ route('login') }}" class="btn">sign in </a>
+                    {{-- <a href="{{ route('register') }}" class="btn ms-1"> register</a> --}}
                 </div>
             </div>
         </nav>
