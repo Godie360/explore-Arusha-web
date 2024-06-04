@@ -45,19 +45,8 @@
                                     class="fas fa-times"></i></a>
                         </div>
                         <ul class="navbar-nav main-nav my-2 my-lg-0">
-                            <li><a href="{{ route('web.index') }}">Home</a></li>
-                            <li><a href="#">Explore</a></li>
-                            <li class="has-submenu">
-                                <a href>Vendors <i class="fas fa-chevron-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="#">Registration</a></li>
-                                    <li><a href="#">Verification</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Listing</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Complaints</a></li>
-                            <li><a href="{{ route('web.contact_us') }}">Contacts</a></li>
+                            <x-web.header-list-component />
+
                         </ul>
                     </div>
                     <div class="d-flex align-items-center block-e">

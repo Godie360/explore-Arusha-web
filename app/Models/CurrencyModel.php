@@ -6,16 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-
-class RegionModel extends Model
+class CurrencyModel extends Model
 {
+
     use HasFactory;
-    protected $table = "regions";
     public $incrementing = false;
     public $timestamps = false;
+    protected $table = "currencies";
+
+
     protected $fillable = [
         'name',
         'code',
+        'exchange_rate'
     ];
 
     protected static function boot()
@@ -26,10 +29,5 @@ class RegionModel extends Model
         });
         static::updating(function ($model) {
         });
-    }
-
-    public function districts()
-    {
-        return $this->hasMany(DistrictModel::class);
     }
 }

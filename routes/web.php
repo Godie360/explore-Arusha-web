@@ -27,6 +27,7 @@ Route::group(['as' => 'web.'], function () {
     Route::group(['as' => 'vendor.', 'prefix' => 'vendor'], function () {
         Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
         Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');
+        Route::get('/fetch_districts', [VendorController::class, 'fetch_districts'])->name('registration.fetch_districts');
     });
 });
 

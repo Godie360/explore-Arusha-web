@@ -21,10 +21,10 @@ return [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
-        'user' => [
+        'vendor' => [
             'profile' => 'r,u',
         ],
-        'role_name' => [
+        'staff' => [
             'module_1_name' => 'c,r,u,d',
         ],
     ],
