@@ -31,7 +31,6 @@ Route::group(['as' => 'web.'], function () {
         Route::get('/fetch_districts', [VendorController::class, 'fetch_districts'])->name('registration.fetch_districts');
     });
 
-
     Route::group(['as' => 'users.', 'prefix' => 'users'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     });
