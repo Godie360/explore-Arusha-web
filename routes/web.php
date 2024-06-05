@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,11 @@ Route::group(['as' => 'web.'], function () {
         Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
         Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');
         Route::get('/fetch_districts', [VendorController::class, 'fetch_districts'])->name('registration.fetch_districts');
+    });
+
+
+    Route::group(['as' => 'users.', 'prefix' => 'users'], function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     });
 });
 

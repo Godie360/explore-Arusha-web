@@ -4533,20 +4533,19 @@ html.menu-opened body {
 }
 .breadcrumb-bar {
     background: #384b5c;
-    padding: 170px 0 90px;
-    padding: 170px 0 90px;
+    padding: 105px 0 20px;
     position: relative;
     z-index: 1;
     width: 100%;
 }
 @media (max-width: 1199.98px) {
     .breadcrumb-bar {
-        padding: 140px 0 60px;
+        padding: 105px 0 20px;
     }
 }
 @media (max-width: 991.98px) {
     .breadcrumb-bar {
-        padding: 120px 0 60px;
+        padding: 105px 0 20px;
     }
 }
 .breadcrumb-bar::before {

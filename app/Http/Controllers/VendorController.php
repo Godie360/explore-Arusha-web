@@ -69,9 +69,9 @@ class VendorController extends Controller
                 $user = User::create([
                     'first_name' => $request->company_name,
                     'last_name' => $request->company_name,
-                    'phone' => $request->company_email,
+                    'phone' => $request->company_phone,
                     'email' => $request->company_email,
-                    'password' => Hash::make('password'),
+                    'password' => Hash::make($request->password),
                 ]);
                 $role = Role::whereName('vendor')->first();
                 $roles =  $user->syncRoles([$role]);
