@@ -133,7 +133,7 @@ return new class extends Migration
             $table->string("email")->nullable();
             $table->string("phone");
             $table->string("address");
-            $table->string("company_id");
+            $table->string("company_id")->default(1);
             $table->foreign("company_id")->references("id")->on("companies");
             $table->string("staff_type_id");
             $table->foreign("staff_type_id")->references("id")->on("staff_types");
