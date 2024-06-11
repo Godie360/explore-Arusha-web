@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
+use App\Http\Controllers\Users\StaffsController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\WebController;
+use App\View\Components\VendorLayout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +35,14 @@ Route::group(['as' => 'web.'], function () {
 
     Route::group(['as' => 'users.', 'prefix' => 'users'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::resource('staff', StaffsController::class);
+
+
+
     });
+
+
+
 });
 
 Route::middleware([
@@ -45,3 +54,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+

@@ -29,8 +29,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="
+                        {{route('web.users.staff.index')}}">
+                        <i class="fa-solid fa-user-tie"></i><span>Staffs</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="my-listing.html">
-                            <i class="feather-list"></i> <span>My Listing</span>
+                            <i class="feather-list"></i> <span>Services</span>
                         </a>
                     </li>
                     <li>
@@ -55,7 +61,7 @@
                     </li>
                 </ul>
             </div>
-        
+
             {{ $slot }}
         </div>
     </div>
