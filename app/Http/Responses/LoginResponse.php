@@ -23,7 +23,10 @@ class LoginResponse implements LoginResponseContract
                     return redirect()->route('web.users.dashboard.index');
                     break;
                 case 'superadministrator':
-                    return redirect()->route('dashboard');
+                    return redirect()->route('dmin.dashboard.index');
+                    break;
+                case 'administrator':
+                    return redirect()->route('admin.dashboard.index');
                     break;
                 default:
                     auth('web')->logout();
