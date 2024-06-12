@@ -38,12 +38,13 @@ class NewsCategorySeeder extends Seeder
         DB::beginTransaction();
         // Create categories and random tags for each category
         foreach ($categories as $categoryName) {
-            $category = NewsCategoryModel::create([
-                'slug' => Str::slug($categoryName),
+            $category = NewsCategoryModel::updateOrCreate([
                 'name' => $categoryName,
+            ], [
+                'slug' => Str::slug($categoryName),
             ]);
 
-          
+
             // Create news for each category
             for ($i = 0; $i < 4; $i++) {
                 $news = NewsModel::create([
@@ -77,7 +78,7 @@ class NewsCategorySeeder extends Seeder
 
                 for ($i = 0; $i < 3; $i++) {
                     $tagName = $faker->unique()->word; // Unique tag names within each category
-                    $tag = TagModel::create([
+                    $tag = TagModel::updateOrCreate([
                         'name' => $tagName,
                     ]);
                 }

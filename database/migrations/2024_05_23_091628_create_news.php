@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string("slug");
             $table->string("futured_image");
             $table->string('video_url')->nullable();
-            $table->string('status')->default('published');
+            $table->string('status')->default('pending');
             $table->string("news_category_id");
             $table->foreign("news_category_id")->references("id")->on("news_categories");
             $table->string("user_id");

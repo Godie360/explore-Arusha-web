@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\DashboardContrller;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\NewsCategoryController as AdminNewsCategoryController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\StaffsController;
@@ -39,14 +41,14 @@ Route::group(['as' => 'web.'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('staff', StaffsController::class);
     });
-
-
-
 });
 
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::group(['prefix' => 'news-updates'], function () {
+        Route::resource('news-categories', AdminNewsCategoryController::class);
+        Route::resource('news', AdminNewsController::class);
+    });
 });
-
-

@@ -1,10 +1,10 @@
 <div class="header">
     <div class="header-left">
         <a href="index.html" class="logo">
-            <img src="assets/img/logo.svg" alt="Logo" width="30" height="30" />
+            <img src="{{ asset('arusha-logo.png') }}" alt="Logo" width="30" height="30" />
         </a>
         <a href="index.html" class="logo-small">
-            <img src="assets/img/logo-small.svg" alt="Logo" width="30" height="30" />
+            <img src="{{ asset('arusha-logo.png') }}" alt="Logo" width="30" height="30" />
         </a>
     </div>
     <a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
