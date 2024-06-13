@@ -11,8 +11,8 @@
             <div class="col-xl-8">
 
                 <div class="service-images big-gallery">
-                    <img src="{{ $news->futured_image }}" class="img-fluid" alt="img" />
-                    <a href="{{ $news->futured_image }}" data-fancybox="gallery" class="btn btn-show"><i
+                    <img src="{{ $news->featured_image }}" class="img-fluid" alt="img" />
+                    <a href="{{ $news->featured_image }}" data-fancybox="gallery" class="btn btn-show"><i
                             class="fe fe-image me-1"></i> Show all photos</a>
                 </div>
                 <div class="serv-profile">
@@ -60,7 +60,7 @@
                             @endif
 
                         </div>
-                
+
                     </div>
                 </div>
             </div>

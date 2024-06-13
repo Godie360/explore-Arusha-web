@@ -270,7 +270,7 @@
                                     <label for="futured_file" class="form-label required">Featured Image</label>
                                     <div class="file-input-wrapper" id="fileInputWrapper">
                                         <input type="file" id="futured_file" name="futured_file">
-                                        <img id="preview" src="{{ $news->futured_image }}">
+                                        <img id="preview" src="{{ $news->featured_image }}">
                                         <div class="" id="placeholder">Browse Image</div>
                                     </div>
                                 </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardContrller;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\GalleriesController;
 use App\Http\Controllers\Admin\NewsCategoryController as AdminNewsCategoryController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\NewsController;
@@ -52,4 +53,6 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:sanc
         Route::resource('news-categories', AdminNewsCategoryController::class);
         Route::resource('news', AdminNewsController::class);
     });
+    Route::delete('/galleries/file-delete', [GalleriesController::class, 'file_delete'])->name('galleries.file_delete');
+    Route::resource('galleries', GalleriesController::class);
 });

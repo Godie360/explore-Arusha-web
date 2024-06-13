@@ -55,6 +55,13 @@
                 </li>
 
                 <li>
+                    <a href="{{ route('admin.galleries.index') }}"
+                        class="{{ request()->routeIs('admin.galleries.*') ? 'active' : '' }}"><i
+                            class="fe fe-image"></i>
+                        <span>Galleries</span></a>
+                </li>
+
+                <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();"><i

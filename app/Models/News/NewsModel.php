@@ -15,7 +15,7 @@ class NewsModel extends Model
     use HasFactory;
     protected $fillable = [
         'slug',
-        'futured_image',
+        'featured_image',
         'video_url',
         'status',
         'user_id',
@@ -106,7 +106,7 @@ class NewsModel extends Model
                 $images[] = $file->file;
             }
         } else {
-            $images[] = $this->futured_image;
+            $images[] = $this->featured_image;
         }
         return $images;
     }

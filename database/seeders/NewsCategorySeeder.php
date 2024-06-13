@@ -49,7 +49,7 @@ class NewsCategorySeeder extends Seeder
             for ($i = 0; $i < 4; $i++) {
                 $news = NewsModel::create([
                     'slug' => $faker->slug,
-                    'futured_image' => 'https://via.placeholder.com/1200X600',
+                    'featured_image' => 'https://via.placeholder.com/1200X600',
                     'user_id' => User::oldest()->first()->id,
                     'news_category_id' => $category->id,
                     'token' => $faker->uuid,

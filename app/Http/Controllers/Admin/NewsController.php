@@ -36,7 +36,7 @@ class NewsController extends Controller
                     ];
                 })
                 ->addColumn('news_title', function ($data) {
-                    $news_title = ' <a href="' . route('admin.news.show', ['news', $data->id]) . '" class="table-imgname"><img src="' . $data->futured_image . '" class="me-2" alt="img"><span>' . $data->detail->title . '</span>';
+                    $news_title = ' <a href="' . route('admin.news.show', ['news', $data->id]) . '" class="table-imgname"><img src="' . $data->featured_image . '" class="me-2" alt="img"><span>' . $data->detail->title . '</span>';
                     return $news_title;
                 })
                 ->addColumn('category', function ($data) {
@@ -95,7 +95,7 @@ class NewsController extends Controller
         if (is_array($request->news_category)) {
             DB::beginTransaction();
             $news = NewsModel::create([
-                'futured_image' => $request->featured_image,
+                'featured_image' => $request->featured_image,
                 'video_url' => $request->video_url,
                 'news_category_id' => $request->news_category[0],
                 'status' => 'pending'
@@ -192,7 +192,7 @@ class NewsController extends Controller
             DB::beginTransaction();
             if ($request->hasFile('futured_file')) {
                 if ($news->featured_image != null) {
-                    // delete_file($news->featured_image);
+                    delete_file($news->featured_image);
                 }
                 $request->merge([
                     'featured_image' => upload_file("futured_file", "news"),
@@ -203,7 +203,7 @@ class NewsController extends Controller
                 ]);
             }
             $news->update([
-                'futured_image' => $request->featured_image,
+                'featured_image' => $request->featured_image,
                 'video_url' => $request->video_url,
                 'news_category_id' => $request->news_category[0],
             ]);
