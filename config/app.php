@@ -185,6 +185,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'NewsStatusEnum' => \App\Enums\NewsStatusEnum::class,
+        'ComplaintStatusEnum' => \App\Enums\ComplaintStatusEnum::class,
+
     ])->toArray(),
 
 ];

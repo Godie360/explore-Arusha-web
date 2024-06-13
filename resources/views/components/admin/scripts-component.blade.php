@@ -8,8 +8,8 @@
 <script src="{{ asset('admin/assets/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('admin/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('admin/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
-
 <script src="{{ asset('admin/assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('admin/assets/plugins/fancybox/jquery.fancybox.min.js') }}" type="text/javascript"></script>
+@stack('scripts')
 
 <script src="{{ asset('admin/assets/js/admin.js') }}" type="text/javascript"></script>
-@stack('scripts')

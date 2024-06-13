@@ -48,6 +48,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:sanc
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 
     Route::group(['prefix' => 'news-updates'], function () {
+        Route::get('/news/status/{id}', [AdminNewsController::class, 'status'])->name('news.status');
         Route::resource('news-categories', AdminNewsCategoryController::class);
         Route::resource('news', AdminNewsController::class);
     });

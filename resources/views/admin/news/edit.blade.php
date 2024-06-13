@@ -117,7 +117,6 @@
     @endpush
     @push('scripts')
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-
         <script>
             $(document).ready(function() {
                 $('#futured_file').on('change', function(event) {
@@ -132,52 +131,60 @@
                         reader.readAsDataURL(file);
                     }
                 });
-
-                var selectedFiles = [];
-
+                var dataTransfer = new DataTransfer();
                 $('#images').on('change', function(event) {
                     var files = event.target.files;
                     var container = $('.multiple-image-container');
-                    var filesArr = Array.prototype.slice.call(files);
-
-                    filesArr.forEach(function(file) {
-                        selectedFiles.push(file);
-                        var reader = new FileReader();
-
-                        reader.onload = function(e) {
-                            var imgCard = $('<div>', {
-                                class: 'image-card'
-                            });
-                            var img = $('<img>', {
-                                src: e.target.result,
-                                alt: file.name
-                            });
-                            var deleteIcon = $('<i>', {
-                                class: 'fe fe-trash delete-icon'
-                            });
-
-                            deleteIcon.on('click', function() {
-                                var index = selectedFiles.indexOf(file);
-                                if (index > -1) {
-                                    selectedFiles.splice(index, 1);
-                                }
-                                imgCard.remove();
-                            });
-
-                            imgCard.append(deleteIcon);
-                            imgCard.append(img);
-                            container.append(imgCard);
-                        };
-
-                        reader.readAsDataURL(file);
-                    });
-
-                    // Clear the input field to allow the same file selection again if needed
-                    // $('#images').val('');
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+                        // Check for duplicates
+                        var isDuplicate = false;
+                        for (var j = 0; j < dataTransfer.items.length; j++) {
+                            var existingFile = dataTransfer.items[j].getAsFile();
+                            if (existingFile.name === file.name && existingFile.size === file.size &&
+                                existingFile.type === file.type) {
+                                isDuplicate = true;
+                                break;
+                            }
+                        }
+                        if (!isDuplicate) {
+                            dataTransfer.items.add(file);
+                            var reader = new FileReader();
+                            reader.onload = (function(file) {
+                                return function(e) {
+                                    var imgCard = $('<div>', {
+                                        class: 'image-card'
+                                    });
+                                    var img = $('<img>', {
+                                        src: e.target.result,
+                                        alt: file.name
+                                    });
+                                    var deleteIcon = $('<i>', {
+                                        class: 'fe fe-trash delete-icon'
+                                    });
+                                    deleteIcon.on('click', function() {
+                                        for (var j = 0; j < dataTransfer.items
+                                            .length; j++) {
+                                            if (dataTransfer.items[j].getAsFile() ===
+                                                file) {
+                                                dataTransfer.items.remove(j);
+                                                break;
+                                            }
+                                        }
+                                        $('#images')[0].files = dataTransfer.files;
+                                        imgCard.remove();
+                                    });
+                                    imgCard.append(deleteIcon);
+                                    imgCard.append(img);
+                                    container.append(imgCard);
+                                };
+                            })(file);
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                    // Update the input element with the new DataTransfer object
+                    $('#images')[0].files = dataTransfer.files;
                 });
-
-
-
                 var $firstImageCardWithBorder = $(".multiple-image-container .image-card.featured-photo-border")
                     .first();
                 var $featuredTitle = $(".featured-photo-title").detach();
@@ -205,8 +212,6 @@
                     }
                 });
             });
-
-
             $(document).on('submit', 'form#form-submit', function(e) {
                 e.preventDefault();
                 var form = $(this);
@@ -226,7 +231,6 @@
                             title: "Done.",
                             text: response.message,
                         });
-
                         setTimeout(function() {
                             window.location.reload();
                         }, 5000);
@@ -276,7 +280,6 @@
                                         placeholder="Enter video url"
                                         value="{{ old('video_url', $news->video_url) }}" />
                                 </div>
-
                                 <div class="col-12">
                                     <label for="news_category" class="form-label required">Category</label>
                                     <select id="news_category" name="news_category[]" class="form-control select"
@@ -291,7 +294,6 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="tags" class="form-label">Tags</label>
-
                                     <textarea id="tags" name="tags" class="form-control  @error('tags') is-invalid @enderror"
                                         placeholder="Separate tags by comma(,)" cols="10" rows="4">{{ old('tags', $news->tag_names) }}</textarea>
                                     @error('tags')
@@ -300,7 +302,6 @@
                                         </span>
                                     @enderror
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -319,7 +320,6 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-
                                 </div>
                                 <div class="col-12">
                                     <label for="short_description" class="form-label required">News Short
@@ -342,7 +342,6 @@
                                         </span>
                                     @enderror
                                 </div>
-
                                 <div class="col-12">
                                     <label for="images" class="form-label required">Addition Images</label>
                                     <input type="file" class="form-control" name="images[]" id="images"
@@ -369,13 +368,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </form>
     </div>
 </x-admin-layout>

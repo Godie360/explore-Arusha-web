@@ -23,23 +23,32 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.dashboard.index') }}" class="active"><i class="fe fe-grid"></i>
+                    <a href="{{ route('admin.dashboard.index') }}"
+                        class="{{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}"><i
+                            class="fe fe-grid"></i>
                         <span>Dashboard</span></a>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><i class="fe fe-file-text"></i>
+                    <a href="javascript:void(0);"
+                        class="{{ request()->routeIs(['admin.news.*', 'admin.news-categories.*']) ? ' subdrop' : '' }}"><i
+                            class="fe fe-file-text"></i>
                         <span>News & Updates</span>
                         <span class="menu-arrow"><i class="fe fe-chevron-right"></i></span>
                     </a>
-                    <ul>
+                    <ul
+                        style="display:{{ request()->routeIs(['admin.news.*', 'admin.news-categories.*']) ? 'block' : 'none' }}; !important">
                         <li>
-                            <a href="{{ route('admin.news.index') }}">All News</a>
+                            <a href="{{ route('admin.news.index') }}"
+                                class="{{ request()->routeIs(['admin.news.index', 'admin.news.edit', 'admin.news.show']) ? 'active' : '' }}">All
+                                News</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.news.create') }}">Add News</a>
+                            <a href="{{ route('admin.news.create') }}"
+                                class="{{ request()->routeIs(['admin.news.create']) ? 'active' : '' }}">Add News</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.news-categories.index') }}">Categories</a>
+                            <a href="{{ route('admin.news-categories.index') }}"
+                                class="{{ request()->routeIs('admin.news-categories.*') ? 'active' : '' }}">Categories</a>
                         </li>
 
                     </ul>

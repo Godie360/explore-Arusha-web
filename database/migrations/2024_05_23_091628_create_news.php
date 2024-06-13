@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string("token")->unique();
             $table->foreign("user_id")->references("id")->on("users");
             $table->double("view_count")->default(0);
+            $table->timestamp("published_at")->nullable();
             $table->timestamps();
         });
         Schema::create('news_details', function (Blueprint $table) {

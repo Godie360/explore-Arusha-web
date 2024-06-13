@@ -381,6 +381,43 @@ if (!function_exists('patchFile')) {
         }
     }
 }
+
+if (!function_exists('delete_file')) {
+    function delete_file($file, $disk = "s3")
+    {
+
+        if ($disk == 's3') {
+            $url = parse_url($file);
+            $u = ($url['scheme'] ?? "") . "://" . ($url['host'] ?? "") . "/";
+            $path = str_replace($u, "", $file);
+        } else {
+            $path = $file;
+        }
+
+        if (Storage::disk($disk)->exists($path)) {
+            Storage::disk($disk)->delete($path);
+        }
+    }
+}
+if (!function_exists('file_exist')) {
+    function file_exist($file, $disk = "s3")
+    {
+        if ($disk == 's3') {
+            $url = parse_url($file);
+            $u = ($url['scheme'] ?? "") . "://" . ($url['host'] ?? "") . "/";
+            $path = str_replace($u, "", $file);
+        } else {
+            $path = $file;
+        }
+        if (Storage::disk($disk)->exists($path)) {
+            return true;
+        }
+        return false;
+    }
+}
+
+
+
 if (!function_exists('isMergedCell')) {
     function  isMergedCell($worksheet, $column, $row)
     {

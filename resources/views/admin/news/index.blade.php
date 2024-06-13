@@ -6,7 +6,6 @@
                 var datatable_url = "{{ route('admin.news.index') }}";
                 var table;
                 var datatable;
-
                 table = document.querySelector('#news-table');
                 datatable = $(table).DataTable({
                     bFilter: false,
@@ -68,7 +67,6 @@
                             searchable: false,
                             orderable: false
                         },
-
                         {
                             data: 'created_at',
                             name: 'created_at',
@@ -86,7 +84,6 @@
                             orderable: false
                         }
                     ],
-
                 });
                 $(document).on('click', '.delete_button', function(e) {
                     e.preventDefault();
@@ -113,21 +110,13 @@
                                     _method: "DELETE",
                                 },
                                 success: function(response) {
+                                    console.log(response);
                                     datatable.ajax.reload();
-
-
-
-
                                     Swal.fire({
                                         icon: "success",
                                         title: "Data deleted successfuly.",
                                         text: response.message,
                                     });
-
-
-
-
-
                                 },
                                 error: function(xhr) {
                                     var error = JSON.parse(xhr.responseText);
@@ -140,8 +129,6 @@
                             });
                         }
                     });
-
-
                 });
             })();
         </script>
@@ -151,7 +138,6 @@
             <h5>All News</h5>
             <div class="list-btn">
                 <ul>
-
                     <li>
                         <div class="filter-sorting">
                             <ul>
@@ -198,7 +184,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/feather/feather.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/sweetalert2/sweetalert2.min.css') }}"
         type="text/css" />
+    <link rel="stylesheet" href="{{ asset('admin/assets/plugins/fancybox/jquery.fancybox.min.css') }}" />
+
 
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}" />
     @stack('styles')
