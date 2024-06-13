@@ -2,6 +2,7 @@
 
 namespace App\Models\Company;
 
+use App\Enums\CompanyStatusEnum;
 use App\Models\CountryModel;
 use App\Models\DistrictModel;
 use App\Models\RegionModel;
@@ -58,7 +59,7 @@ class CompanyModel extends Model
         'year_established' => 'integer',
         'number_of_employees' => 'integer',
         'approved_at' => 'datetime',
-        'status' => 'integer',
+        'status' => CompanyStatusEnum::class,
     ];
 
     protected $appends = ["logo_url"];

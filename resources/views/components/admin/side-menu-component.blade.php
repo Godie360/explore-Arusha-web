@@ -60,6 +60,12 @@
                             class="fe fe-image"></i>
                         <span>Galleries</span></a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.vendors.index') }}"
+                        class="{{ request()->routeIs('admin.vendors.*') ? 'active' : '' }}"><i
+                            class="fa-solid fa-industry"></i>
+                        <span>Vendors</span></a>
+                </li>
 
                 <li>
                     <a href="{{ route('logout') }}"
