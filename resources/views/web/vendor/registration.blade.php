@@ -389,8 +389,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label required" for="year_of_establishment">Year of
-                                                    Establishment</label>
+                                                <label class="form-label required" for="year_of_establishment">Year of Establishment</label>
                                                 <input type="number" class="form-control" id="year_of_establishment"
                                                     name="year_of_establishment"
                                                     placeholder="Enter Year of Establishment" required>
@@ -411,8 +410,7 @@
                                                     required>
                                             </div>
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label" for="tin_number">Tax Identification
-                                                    Number</label>
+                                                <label class="form-label" for="tin_number">Tax Identification Number</label>
                                                 <input type="text" class="form-control" id="tin_number"
                                                     name="tin_number" placeholder="Enter TIN">
                                             </div>
@@ -426,8 +424,7 @@
                                         <h2 class="fs-title">Contact & Address Information</h2>
                                         <div class="row">
                                             <div class="form-group mt-2 col-md-4">
-                                                <label class="form-label required" for="company_phone">Company Phone
-                                                    Number</label>
+                                                <label class="form-label required" for="company_phone">Company Phone Number</label>
                                                 <input type="text" class="form-control" id="company_phone"
                                                     name="company_phone" placeholder="Enter Phone Number" required>
                                             </div>

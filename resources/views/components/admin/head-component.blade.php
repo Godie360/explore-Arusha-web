@@ -4,6 +4,16 @@
     <title>{{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="shortcut icon" href="{{ asset('arusha-logo.svg') }}" />
+
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css') }}" />
@@ -18,5 +28,13 @@
 
 
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}" />
+    <style>
+        .ck-editor__editable[role="textbox"] {
+            /* Editing area */
+            min-height: 300px;
+        }
+
+
+    </style>
     @stack('styles')
 </head>

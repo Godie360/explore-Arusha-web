@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company\CategoryModel;
 use App\Models\Company\CompanyModel;
+use App\Models\CountryModel;
+use App\Models\DistrictModel;
+use App\Models\RegionModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Yajra\DataTables\Facades\DataTables;
 
 class VendorController extends Controller
@@ -69,7 +74,16 @@ class VendorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $vendor = CompanyModel::where('id', $id)->first();
+        if ($vendor) {
+            $countries = CountryModel::orderBy('name', 'ASC')->get();
+            $regions = RegionModel::orderBy('name', 'ASC')->get();
+            $districts = DistrictModel::where('region_id', $vendor->region_id)->orderBy('name', 'ASC')->get();
+            $categories = CategoryModel::orderBy('name', 'ASC')->get();
+            return view('admin.vendor.edit', compact('vendor', 'countries', 'regions', 'districts', 'categories'));
+        }
+        return redirect()->back()->with('error', 'Vendor Not Found');
     }
 
     /**
@@ -77,7 +91,23 @@ class VendorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'status' => 'required',
+        ]);
+        $vendor = CompanyModel::where('id', $id)->first();
+        if ($vendor) {
+            $vendor->update(['status' => $request->status]);
+            if ($request->ajax()) {
+                return response()->json(['message' => 'Vendor successful updated', 'data' => null]);
+            } else {
+                return redirect()->back()->with('success', 'Vendor successful updated');
+            }
+        }
+        if ($request->ajax()) {
+            return response()->json(['message' => 'Vendor Not Found', 'data' => null], Response::HTTP_BAD_REQUEST);
+        } else {
+            return redirect()->back()->with('error', 'Vendor Not Found');
+        }
     }
 
     /**
@@ -86,5 +116,6 @@ class VendorController extends Controller
     public function destroy(string $id)
     {
         //
+
     }
 }
