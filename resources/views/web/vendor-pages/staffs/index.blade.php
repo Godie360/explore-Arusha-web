@@ -2,8 +2,11 @@
     <div class="dash-listingcontent dashboard-info">
         <div class="dash-cards card">
             <div class="card-header">
-                <h4>My Listings</h4>
-                <a class="nav-link add-listing" href="{{route('web.users.staff.create')}}"">
+                <h4>My Staffs</h4>
+                <a class="nav-link add-listing" href="{{route('web.users.staff-type.index')}}">
+                    <span><i class="fa-solid fa-plus"></i></span>Staff Type
+                </a>
+                <a class="nav-link add-listing" href="{{route('web.users.staffs.create')}}">
                     <span><i class="fa-solid fa-plus"></i></span>Add Staff
                 </a>
             </div>

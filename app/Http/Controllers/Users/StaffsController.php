@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company\IdTypeModel;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,13 +15,15 @@ class StaffsController extends Controller
      */
     public function index()
     {
-        $staffs = Staff::paginate(1);
-        return view('vendor-pages.staffs.index', compact('staffs'));
+        $staffs = Staff::latest()->paginate();
+        return view('web.vendor-pages.staffs.index', compact('staffs'));
     }
 
     public function create()
     {
-        return view('vendor-pages.staffs.create');
+        $id_types = IdTypeModel::all();
+
+        return view('web.vendor-pages.staffs.create',compact('id_types'));
     }
 
     public function store(Request $request)

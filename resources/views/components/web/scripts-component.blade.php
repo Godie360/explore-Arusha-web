@@ -5,4 +5,59 @@
 <script src="{{ asset('assets/js/backToTop.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/js/feather.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/js/script.js') }}" type="text/javascript"></script>
+<script src="{{ asset('admin/assets/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('admin/assets/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('admin/assets/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
+
 @stack('scripts')
+
+
+<script>
+    @if (Session::has('message'))
+        Swal.fire({
+            title: 'Success',
+            text: "{{ session('message') }}",
+            icon: 'success',
+        });
+    @endif
+
+    @if (Session::has('error'))
+        Swal.fire({
+            title: 'Error',
+            text: "{{ session('error') }}",
+            icon: 'error',
+        });
+    @endif
+
+    @if (Session::has('info'))
+        Swal.fire({
+            title: 'Info',
+            text: "{{ session('info') }}",
+            icon: 'info',
+        });
+    @endif
+
+    @if (Session::has('warning'))
+        Swal.fire({
+            title: 'Warning',
+            text: "{{ session('warning') }}",
+            icon: 'warning',
+        });
+    @endif
+
+    @if (Session::has('success'))
+        Swal.fire({
+            title: 'Success',
+            text: "{{ session('success') }}",
+            icon: 'success',
+        });
+    @endif
+
+    @if (Session::has('danger'))
+        Swal.fire({
+            title: 'Danger',
+            text: "{{ session('danger') }}",
+            icon: 'error',
+        });
+    @endif
+</script>

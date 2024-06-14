@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\StaffsController;
+use App\Http\Controllers\Users\StaffTypeController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\WebController;
 use App\View\Components\VendorLayout;
@@ -44,7 +45,8 @@ Route::group(['as' => 'web.'], function () {
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile.index');
         Route::post('/profile', [DashboardController::class, 'profile_store'])->name('profile.store');
         Route::post('/change-password', [DashboardController::class, 'change_password'])->name('change.password');
-        Route::resource('staff', StaffsController::class);
+        Route::resource('staff-type', StaffTypeController::class);
+        Route::resource('staffs', StaffsController::class);
     });
 });
 

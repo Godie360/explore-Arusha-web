@@ -28,10 +28,9 @@
                             <i class="fa-solid fa-user"></i> <span>Profile</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="
-                        {{route('web.users.staff.index')}}">
-                        <i class="fa-solid fa-user-tie"></i><span>Staffs</span>
+                    <li class="{{ request()->routeIs('web.users.staffs.*') ? 'active' : '' }}">
+                        <a href="{{ route('web.users.staffs.index') }}">
+                            <i class="fa-solid fa-user-tie"></i><span>Staffs</span>
                         </a>
                     </li>
                     <li>
