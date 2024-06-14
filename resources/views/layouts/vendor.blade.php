@@ -18,13 +18,13 @@
         <div class="container">
             <div class>
                 <ul class="dashborad-menus">
-                    <li class="active">
-                        <a href="dashboard.html">
+                    <li class="{{ request()->routeIs('web.users.dashboard.index') ? 'active' : '' }}">
+                        <a href="{{ route('web.users.dashboard.index') }}">
                             <i class="feather-grid"></i> <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="profile.html">
+                    <li class="{{ request()->routeIs('web.users.profile.index') ? 'active' : '' }}">
+                        <a href="{{ route('web.users.profile.index') }}">
                             <i class="fa-solid fa-user"></i> <span>Profile</span>
                         </a>
                     </li>
@@ -39,11 +39,7 @@
                             <i class="feather-list"></i> <span>Services</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="bookmarks.html">
-                            <i class="fas fa-solid fa-heart"></i> <span>Bookmarks</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="messages.html">
                             <i class="fa-solid fa-comment-dots"></i> <span>Messages</span>

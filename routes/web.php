@@ -41,6 +41,9 @@ Route::group(['as' => 'web.'], function () {
 
     Route::group(['as' => 'users.', 'prefix' => 'users', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('profile.index');
+        Route::post('/profile', [DashboardController::class, 'profile_store'])->name('profile.store');
+        Route::post('/change-password', [DashboardController::class, 'change_password'])->name('change.password');
         Route::resource('staff', StaffsController::class);
     });
 });

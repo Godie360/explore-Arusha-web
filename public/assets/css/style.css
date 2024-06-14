@@ -18103,7 +18103,8 @@ ul.dashborad-menus li.active a {
     height: 20px;
     font-size: 20px;
 }
-.profile-form .group-img input {
+.profile-form .group-img input,
+.profile-form .group-img select {
     padding: 6px 15px 6px 40px;
 }
 .profile-form textarea.form-control {
@@ -21054,7 +21055,8 @@ body table.listing-table.datatable {
 .group-img {
     position: relative;
 }
-.group-img input {
+.group-img input,
+.group-img select {
     padding: 6px 15px 6px 38px;
     min-height: 52px;
     border: 1px solid #e3e3e3;
