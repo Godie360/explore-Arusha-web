@@ -157,6 +157,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="field-btns">
+
                                     <button class="btn btn-submit next_btn" type="button">Next <i
                                             class="fe fe-arrow-right ms-1"></i></button>
                                 </div>
@@ -261,7 +262,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="field-btns">
+                                <div class="field-btns  d-flex justify-content-between w-100">
+                                    <button class="btn btn-submit previous_btn" type="button"> <i
+                                        class="fe fe-arrow-left ms-1"></i>Previous</button>
                                     <button class="btn btn-submit next_btn" type="button">Next <i
                                             class="fe fe-arrow-right ms-1"></i></button>
                                 </div>
@@ -314,7 +317,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="field-btns">
+                                <div class="field-btns  d-flex justify-content-between w-100">
+                                    <button class="btn btn-submit previous_btn" type="button"> <i
+                                        class="fe fe-arrow-left ms-1"></i> Previous</button>
                                     <button class="btn btn-submit next_btn" type="button">Next <i
                                             class="fe fe-arrow-right ms-1"></i></button>
                                 </div>
@@ -338,9 +343,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="field-btns">
-                            <button class="btn btn-submit " type="submit">Save changes <i
-                                    class="fe fe-arrow-right ms-1"></i></button>
+                        <div class="field-btns d-flex justify-content-between w-100">
+                            <!-- Previous Button -->
+                            <button class="btn btn-submit previous_btn" type="button"><i class="fe fe-arrow-left ms-1"></i> Previous</button>
+                            <!-- Save Button -->
+                            <button class="btn btn-submit" type="submit">Save changes <i class="fe fe-arrow-right ms-1"></i></button>
                         </div>
                     </fieldset>
                 </form>

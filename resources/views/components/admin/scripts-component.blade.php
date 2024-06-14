@@ -23,7 +23,6 @@
             title: 'Success',
             text: "{{ session('message') }}",
             icon: 'success',
-            showCloseButton: true
         });
     @endif
 
@@ -32,7 +31,6 @@
             title: 'Error',
             text: "{{ session('error') }}",
             icon: 'error',
-            showCloseButton: true
         });
     @endif
 
@@ -41,7 +39,6 @@
             title: 'Info',
             text: "{{ session('info') }}",
             icon: 'info',
-            showCloseButton: true
         });
     @endif
 
@@ -50,7 +47,6 @@
             title: 'Warning',
             text: "{{ session('warning') }}",
             icon: 'warning',
-            showCloseButton: true
         });
     @endif
 
@@ -59,7 +55,6 @@
             title: 'Success',
             text: "{{ session('success') }}",
             icon: 'success',
-            showCloseButton: true
         });
     @endif
 
@@ -67,8 +62,7 @@
         Swal.fire({
             title: 'Danger',
             text: "{{ session('danger') }}",
-            icon: 'error', 
-            showCloseButton: true
+            icon: 'error',
         });
     @endif
 </script>

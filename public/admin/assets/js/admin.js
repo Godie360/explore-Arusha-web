@@ -215,13 +215,25 @@
     }
     $(document).ready(function () {
         $(".next_btn").on("click", function () {
-            $(this).closest("fieldset").next().fadeIn("slow");
-            $(this).closest("fieldset").css({ display: "none" });
-            $("#progressbar .active")
-                .removeClass("active")
-                .addClass("activated")
-                .next()
-                .addClass("active");
+            var currentFieldset = $(this).closest("fieldset");
+            var nextFieldset = currentFieldset.next();
+
+            currentFieldset.css({ display: "none" });
+            nextFieldset.fadeIn("slow");
+
+            var currentStep = $("#progressbar .active");
+            currentStep.removeClass("active").addClass("activated").next().addClass("active");
+        });
+
+        $(".previous_btn").on("click", function () {
+            var currentFieldset = $(this).closest("fieldset");
+            var previousFieldset = currentFieldset.prev();
+
+            currentFieldset.css({ display: "none" });
+            previousFieldset.fadeIn("slow");
+
+            var currentStep = $("#progressbar .active");
+            currentStep.removeClass("active").prev().removeClass("activated").addClass("active");
         });
     });
     $(".addservice-info").on("click", ".trash", function () {
