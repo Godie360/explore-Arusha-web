@@ -64,7 +64,7 @@
                                 <div class="blog-widget">
                                     <div class="blog-img">
                                         <a href="{{ $item->web_show_url }}">
-                                            <img src="{{ $item->futured_image }}" class="img-fluid" alt="blog-img" />
+                                            <img src="{{ $item->featured_image }}" class="img-fluid" alt="blog-img" />
                                         </a>
                                         <div class="blog-category">
                                             <a
@@ -144,7 +144,7 @@
 
                                 <div class="article-blog">
                                     <a href="{{ $item->web_show_url }}">
-                                        <img class="img-fluid" src="{{ $item->futured_image }}" alt="Blog" />
+                                        <img class="img-fluid" src="{{ $item->featured_image }}" alt="Blog" />
                                     </a>
                                 </div>
                                 <div class="article-content">

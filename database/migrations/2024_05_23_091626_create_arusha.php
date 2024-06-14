@@ -310,7 +310,7 @@ return new class extends Migration
             $table->uuid("id")->primary();
             $table->string('name');
             $table->longText('description');
-            $table->string("futured_image")->nullable();
+            $table->string("featured_image")->nullable();
             $table->timestamps();
         });
     }

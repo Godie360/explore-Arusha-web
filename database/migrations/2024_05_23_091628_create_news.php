@@ -26,15 +26,16 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->string("slug");
-            $table->string("futured_image");
+            $table->string("featured_image");
             $table->string('video_url')->nullable();
-            $table->string('status')->default('published');
+            $table->string('status')->default('pending');
             $table->string("news_category_id");
             $table->foreign("news_category_id")->references("id")->on("news_categories");
             $table->string("user_id");
             $table->string("token")->unique();
             $table->foreign("user_id")->references("id")->on("users");
             $table->double("view_count")->default(0);
+            $table->timestamp("published_at")->nullable();
             $table->timestamps();
         });
         Schema::create('news_details', function (Blueprint $table) {

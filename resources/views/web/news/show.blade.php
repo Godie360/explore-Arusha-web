@@ -5,7 +5,7 @@
     @endpush
 
 
-    <div class="blogbanner" style="background-image: url({{ $item->futured_image }})">
+    <div class="blogbanner" style="background-image: url({{ $item->featured_image }})">
         <div class="blogbanner-content">
             <span class="blog-hint">{{ @$item->news_category->name }}</span>
             <h1>{{ @$item->detail->title }}</h1>

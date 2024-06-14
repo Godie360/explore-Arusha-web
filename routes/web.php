@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardContrller;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\GalleriesController;
+use App\Http\Controllers\Admin\NewsCategoryController as AdminNewsCategoryController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\StaffsController;
@@ -33,26 +39,22 @@ Route::group(['as' => 'web.'], function () {
         Route::get('/fetch_districts', [VendorController::class, 'fetch_districts'])->name('registration.fetch_districts');
     });
 
-    Route::group(['as' => 'users.', 'prefix' => 'users'], function () {
+    Route::group(['as' => 'users.', 'prefix' => 'users', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('staff', StaffsController::class);
-
-
-
     });
-
-
-
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
 });
 
 
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::group(['prefix' => 'news-updates'], function () {
+        Route::get('/news/status/{id}', [AdminNewsController::class, 'status'])->name('news.status');
+        Route::resource('news-categories', AdminNewsCategoryController::class);
+        Route::resource('news', AdminNewsController::class);
+    });
+    Route::delete('/galleries/file-delete', [GalleriesController::class, 'file_delete'])->name('galleries.file_delete');
+    Route::resource('galleries', GalleriesController::class);
+    Route::resource('vendors', AdminVendorController::class);
+});
