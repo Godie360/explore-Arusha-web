@@ -41,9 +41,18 @@
         </ul>
     </div>
     <div class="d-flex align-items-center block-e">
-        <div class="cta-btn">
-            <a href="{{ route('login') }}" class="btn">sign in </a>
-            {{-- <a href="{{ route('register') }}" class="btn ms-1"> register</a> --}}
-        </div>
+        @auth
+            @if (!request()->routeIs('web.users.*'))
+                <div class="cta-btn">
+                    <a href="{{ route('web.users.dashboard.index') }}" class="btn">Dashboard</a>
+                </div>
+            @endif
+        @else
+            <div class="cta-btn">
+                <a href="{{ route('login') }}" class="btn">Sign in</a>
+                {{-- <a href="{{ route('register') }}" class="btn ms-1">Register</a> --}}
+            </div>
+        @endauth
+
     </div>
 </nav>
