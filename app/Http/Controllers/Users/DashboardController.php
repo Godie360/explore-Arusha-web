@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Enums\CompanyStatusEnum;
 use App\Http\Controllers\Controller;
 use App\Models\Company\IdTypeModel;
+use App\Models\Company\StaffModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +17,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('web.vendor-pages.index');
+        $total_staffs = StaffModel::count();
+        $active_staffs = StaffModel::where('status',CompanyStatusEnum::Active->value)->count();
+        return view('web.vendor-pages.index',compact('total_staffs','active_staffs'));
     }
 
     public function profile()

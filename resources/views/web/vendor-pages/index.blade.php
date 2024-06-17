@@ -10,8 +10,8 @@
                             </div>
                         </div>
                         <div class="dash-widget-info">
-                            <h6>Active Listing</h6>
-                            <h3 class="counter">500</h3>
+                            <h6>Total Staffs</h6>
+                            <h3 class="counter">{{ number_format($total_staffs) }}</h3>
                         </div>
                     </div>
                 </div>
@@ -25,8 +25,8 @@
                             </div>
                         </div>
                         <div class="dash-widget-info">
-                            <h6>Total Reviews</h6>
-                            <h3>15230</h3>
+                            <h6>Active Staff</h6>
+                            <h3>{{ number_format($active_staffs) }}</h3>
                         </div>
                     </div>
                 </div>
@@ -62,6 +62,6 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
 </x-vendor-layout>
