@@ -1,5 +1,5 @@
 <x-web-layout>
-    <div class="breadcrumb-bar">
+    {{-- <div class="breadcrumb-bar">
         <div class="container">
             <div class="row align-items-center text-center">
                 <div class="col-md-12 col-12">
@@ -13,8 +13,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="dashboard-content">
+    </div> --}}
+    <div class="dashboard-content pt-100">
         <div class="container">
             <div class>
                 <ul class="dashborad-menus">

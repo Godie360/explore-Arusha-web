@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CompanyStatusEnum;
 use App\Enums\ComplaintStatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -129,16 +130,25 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string("id_number");
             $table->string("email")->nullable();
             $table->string("phone");
-            $table->string("address");
-            $table->string("company_id")->default(1);
+            $table->string("address")->nullable();
+            $table->string("id_number");
+            $table->string("id_type_id");
+            $table->foreign("id_type_id")->references("id")->on("id_types");
+            $table->string("gender");
+            $table->date("date_of_birth");
+            $table->string("education")->nullable();
+            $table->string("bio")->nullable();
+            $table->string("work_experience");
+            $table->string("status")->default(CompanyStatusEnum::Active->value);
+            $table->string("company_id");
             $table->foreign("company_id")->references("id")->on("companies");
             $table->string("staff_type_id");
             $table->foreign("staff_type_id")->references("id")->on("staff_types");
-            $table->string("id_type_id");
-            $table->foreign("id_type_id")->references("id")->on("id_types");
+            $table->uuid('country_id')->after('staff_type_id');
+            $table->foreign("country_id")->references("id")->on("countries");
+            $table->string("profile_photo_path")->nullable();
             $table->timestamps();
         });
         Schema::create('otps', function (Blueprint $table) {

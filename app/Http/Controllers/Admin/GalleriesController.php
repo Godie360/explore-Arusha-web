@@ -87,7 +87,7 @@ class GalleriesController extends Controller
                 }
             }
             DB::commit();
-            return response()->json(['message' =>  "Gallery created successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "Gallery created successfully.", 'data' => null], Response::HTTP_OK);
         } catch (Exception $e) {
             return response()->json(['message' => 'Unknown error occur', 'data' => null], Response::HTTP_BAD_REQUEST);
         }
@@ -145,7 +145,7 @@ class GalleriesController extends Controller
                     }
                 }
                 DB::commit();
-                return response()->json(['message' =>  "Gallery updated successful.", 'data' => null], Response::HTTP_OK);
+                return response()->json(['message' =>  "Gallery updated successfully.", 'data' => null], Response::HTTP_OK);
             } else {
                 return response()->json(['message' =>  "Gallery data not found", 'data' => $gallery], Response::HTTP_BAD_REQUEST);
             }
@@ -172,7 +172,7 @@ class GalleriesController extends Controller
             }
             $gallery->delete();
             DB::commit();
-            return response()->json(['message' =>  "Gallery deleted successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "Gallery deleted successfully.", 'data' => null], Response::HTTP_OK);
         } else {
             return response()->json(['message' =>  "Gallery data not found", 'data' => $gallery], Response::HTTP_BAD_REQUEST);
         }
@@ -182,7 +182,7 @@ class GalleriesController extends Controller
         $file = FileModel::where('id', $request->fileId)->first();
         if ($file) {
             $file->delete();
-            return response()->json(['message' =>  "File deleted successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "File deleted successfully.", 'data' => null], Response::HTTP_OK);
         } else {
             return response()->json(['message' =>  "File data not found", 'data' => null], Response::HTTP_BAD_REQUEST);
         }

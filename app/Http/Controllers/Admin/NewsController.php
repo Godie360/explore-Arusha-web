@@ -140,7 +140,7 @@ class NewsController extends Controller
                 patchFile($news, NewsModel::class, "id", false, "images");
             }
             DB::commit();
-            return response()->json(['message' =>  "News created successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "News created successfully.", 'data' => null], Response::HTTP_OK);
         } else {
             return response()->json([
                 'status' => Response::$statusTexts[Response::HTTP_NOT_ACCEPTABLE],
@@ -249,7 +249,7 @@ class NewsController extends Controller
             }
             patchFile($news, NewsModel::class, "id", false, "images");
             DB::commit();
-            return response()->json(['message' =>  "News updated successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "News updated successfully.", 'data' => null], Response::HTTP_OK);
         } else {
             return response()->json(['message' =>  "Unknown error occur.", 'data' => null], Response::HTTP_BAD_REQUEST);
         }
@@ -278,7 +278,7 @@ class NewsController extends Controller
                 }
             }
             DB::commit();
-            return response()->json(['message' =>  "News deleted successful.", 'data' => null], Response::HTTP_OK);
+            return response()->json(['message' =>  "News deleted successfully.", 'data' => null], Response::HTTP_OK);
         }
         return response()->json(['message' =>  "News data not found", 'data' => null], Response::HTTP_BAD_REQUEST);
     }

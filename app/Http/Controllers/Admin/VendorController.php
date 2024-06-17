@@ -98,9 +98,9 @@ class VendorController extends Controller
         if ($vendor) {
             $vendor->update(['status' => $request->status]);
             if ($request->ajax()) {
-                return response()->json(['message' => 'Vendor successful updated', 'data' => null]);
+                return response()->json(['message' => 'Vendor successfully updated', 'data' => null]);
             } else {
-                return redirect()->back()->with('success', 'Vendor successful updated');
+                return redirect()->back()->with('success', 'Vendor successfully updated');
             }
         }
         if ($request->ajax()) {
