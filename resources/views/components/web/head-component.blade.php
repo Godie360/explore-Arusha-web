@@ -17,5 +17,13 @@
         <link rel="stylesheet" href="{{ asset('admin/assets/plugins/datatables/datatables.min.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <style>
+        .ck-editor__editable[role="textbox"] {
+            /* Editing area */
+            min-height: 300px;
+        }
+
+
+    </style>
     @stack('styles')
 </head>

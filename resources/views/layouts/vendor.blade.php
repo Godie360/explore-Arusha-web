@@ -33,19 +33,19 @@
                             <i class="fa-solid fa-user-tie"></i><span>Staffs</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="my-listing.html">
+                    <li class="{{ request()->routeIs('web.users.services.*') ? 'active' : '' }}">
+                        <a href="{{ route('web.users.services.index') }}">
                             <i class="feather-list"></i> <span>Services</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="messages.html">
+                        <a href="#">
                             <i class="fa-solid fa-comment-dots"></i> <span>Messages</span>
                         </a>
                     </li>
                     <li>
-                        <a href="reviews.html">
+                        <a href="#">
                             <i class="fas fa-solid fa-star"></i> <span>Reviews</span>
                         </a>
                     </li>
@@ -62,6 +62,7 @@
                     </li>
                 </ul>
             </div>
+
 
             {{ $slot }}
         </div>

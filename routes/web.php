@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
+use App\Http\Controllers\Users\ServicesController;
 use App\Http\Controllers\Users\StaffsController;
 use App\Http\Controllers\Users\StaffTypeController;
 use App\Http\Controllers\VendorController;
@@ -47,6 +48,7 @@ Route::group(['as' => 'web.'], function () {
         Route::post('/change-password', [DashboardController::class, 'change_password'])->name('change.password');
         Route::resource('staff-type', StaffTypeController::class);
         Route::resource('staffs', StaffsController::class);
+        Route::resource('services', ServicesController::class);
     });
 });
 
