@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\ServicesController;
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\Users\StaffsController;
 use App\Http\Controllers\Users\StaffTypeController;
 use App\Http\Controllers\VendorController;
@@ -35,6 +36,12 @@ Route::group(['as' => 'web.'], function () {
     Route::get('/complaints', [WebController::class, 'complaints'])->name('complaints.index');
     Route::post('/complaints', [WebController::class, 'complaints_store'])->name('complaints.store');
     Route::resource('news', NewsController::class);
+    Route::resource('listing', ListController::class);
+    Route::get('/list-detail', [ListController::class, 'detail'])->name('listing.detail');
+    Route::get('/listing-list', [ListController::class, 'listing_list'])->name('listing.listing_list');
+
+
+
     Route::group(['as' => 'vendor.', 'prefix' => 'vendor'], function () {
         Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
         Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');

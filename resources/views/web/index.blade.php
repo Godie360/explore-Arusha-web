@@ -143,7 +143,7 @@
                                                             <a href="#">About Us</a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">Listing</a>
+                                                            <a href="{{route('web.listing.index')}}">Listing</a>
                                                         </li>
 
                                                         <li><a href="#">Our Blog</a></li>
