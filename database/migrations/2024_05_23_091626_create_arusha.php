@@ -146,7 +146,7 @@ return new class extends Migration
             $table->foreign("company_id")->references("id")->on("companies");
             $table->string("staff_type_id");
             $table->foreign("staff_type_id")->references("id")->on("staff_types");
-            $table->uuid('country_id')->after('staff_type_id');
+            $table->uuid('country_id');
             $table->foreign("country_id")->references("id")->on("countries");
             $table->string("profile_photo_path")->nullable();
             $table->timestamps();
