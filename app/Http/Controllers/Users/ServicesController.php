@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller;
 use App\Models\CountryModel;
 use App\Models\RegionModel;
+use App\Models\Service\CategoryModel;
 use App\Models\Service\ServiceModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
 class ServicesController extends Controller
@@ -47,7 +49,8 @@ class ServicesController extends Controller
     {
         $countries = CountryModel::orderBy('name', 'ASC')->get();
         $regions = RegionModel::orderBy('name', 'ASC')->get();
-        return view('web.vendor-pages.services.create',compact('countries','regions'));
+        $categories = CategoryModel::orderBy('name', 'ASC')->get();
+        return view('web.vendor-pages.services.create', compact('countries', 'regions', 'categories'));
     }
 
     /**
@@ -55,7 +58,36 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id' => 'required|uuid',
+            'sub_category_id' => 'required|uuid',
+            'title' => 'required|string|max:255',
+            'promo_video' => 'nullable|url',
+            'website' => 'nullable',
+            'country_id' => 'required|uuid',
+            'region_id' => 'required|uuid',
+            'district_id' => 'required|uuid',
+            'address' => 'required|string|max:255',
+            'zip_code' => 'required|string|max:10',
+            'phone' => 'required|string|max:15',
+            'email' => 'required|email|max:255',
+            'short_description' => 'required|string|max:1000',
+            'description' => 'required|string',
+            'featured_image_file' => 'nullable|file|image|max:2048',
+        ]);
+        DB::beginTransaction();
+        if ($request->hasFile('featured_image_file')) {
+            $request->merge([
+                'featured_image' => upload_file("featured_image_file", "services"),
+            ]);
+        }
+        $request->merge([
+            'company_id' => auth()->user()->company->id,
+        ]);
+
+        $service = ServiceModel::create($request->except('_token'));
+        DB::commit();
+        return $service;
     }
 
     /**

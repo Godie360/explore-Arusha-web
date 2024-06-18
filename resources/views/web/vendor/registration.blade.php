@@ -282,7 +282,7 @@
                         let districtSelect = $(this).parent().parent().closest('div').find('#district_id');
                         districtSelect.empty().append('<option selected disabled>Searching...</option>');
                         $.ajax({
-                            url: "{{ route('web.vendor.registration.fetch_districts') }}",
+                            url: "{{ route('web.fetch_districts') }}",
                             type: "GET",
                             data: {
                                 region_id: region_id,

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\ComplaintModel;
 use App\Models\ContactModel;
+use App\Models\DistrictModel;
 use App\Models\InstitutionModel;
+use App\Models\Service\CategoryModel;
+use App\Models\Service\SubCategoryModel;
 use App\Models\SuggestionModel;
 use Exception;
 use Illuminate\Http\Request;
@@ -91,6 +94,30 @@ class WebController extends Controller
             }
         } catch (Exception $e) {
             return response()->json(['message' =>  "Uknown error occur", 'data' => null], Response::HTTP_BAD_REQUEST);
+        }
+    }
+
+
+    public function fetch_districts(Request $request)
+    {
+
+        try {
+            $request->validate(['region_id' => 'required']);
+            $districts = DistrictModel::where('region_id', $request->region_id)->orderBY('name', 'ASC')->get();
+            return response()->json(['message' => 'Data found', 'data' => $districts]);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Unknown error occur', 'data' => null], Response::HTTP_BAD_REQUEST);
+        }
+    }
+    public function fetch_subcategories(Request $request)
+    {
+
+        try {
+            $request->validate(['category_id' => 'required']);
+            $data = SubCategoryModel::where('category_id', $request->category_id)->orderBY('name', 'ASC')->get();
+            return response()->json(['message' => 'Data found', 'data' => $data]);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Unknown error occur', 'data' => null], Response::HTTP_BAD_REQUEST);
         }
     }
 }

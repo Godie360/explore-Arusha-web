@@ -34,11 +34,13 @@ Route::group(['as' => 'web.'], function () {
     Route::post('/contact-us', [WebController::class, 'contact_us_store'])->name('contact_us_store');
     Route::get('/complaints', [WebController::class, 'complaints'])->name('complaints.index');
     Route::post('/complaints', [WebController::class, 'complaints_store'])->name('complaints.store');
+    Route::get('/fetch_districts', [WebController::class, 'fetch_districts'])->name('fetch_districts');
+    Route::get('/fetch_subcategories', [WebController::class, 'fetch_subcategories'])->name('fetch_subcategories');
+
     Route::resource('news', NewsController::class);
     Route::group(['as' => 'vendor.', 'prefix' => 'vendor'], function () {
         Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
         Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');
-        Route::get('/fetch_districts', [VendorController::class, 'fetch_districts'])->name('registration.fetch_districts');
     });
 
     Route::group(['as' => 'users.', 'prefix' => 'users', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
