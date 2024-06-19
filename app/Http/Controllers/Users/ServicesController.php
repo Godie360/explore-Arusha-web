@@ -34,11 +34,25 @@ class ServicesController extends Controller
                         'timestamp' =>  $timestamp
                     ];
                 })
-
+                ->editColumn('status', function ($data) {
+                    return $data->status;
+                })
+                ->editColumn('views_count', function ($data) {
+                    return $data->views_count;
+                })
+                ->editColumn('review_count', function ($data) {
+                    return $data->review_count;
+                })
+                ->addColumn('image', function ($data) {
+                    return view('web.vendor-pages.services.service-image', compact('data'));
+                })
+                ->addColumn('details', function ($data) {
+                    return view('web.vendor-pages.services.service-details', compact('data'));
+                })
                 ->addColumn('action', function ($data) {
                     return view('web.vendor-pages.services.service-action-buttons', compact('data'));
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action', 'image', 'details'])
                 ->make(true);
         }
         return view('web.vendor-pages.services.index');
@@ -99,7 +113,7 @@ class ServicesController extends Controller
             patchFile($service, ServiceAmenityModel::class, "id", false, "attachments");
         }
         DB::commit();
-        return $service;
+        return redirect()->back()->with('success', 'Service Created successfully');
     }
 
     /**

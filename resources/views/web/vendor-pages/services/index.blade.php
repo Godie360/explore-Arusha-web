@@ -4,10 +4,10 @@
         <script>
             (function() {
                 "use strict";
-                var datatable_url = "{{ route('web.users.staffs.index') }}";
+                var datatable_url = "{{ route('web.users.services.index') }}";
                 var table;
                 var datatable;
-                table = document.querySelector('#staff-table');
+                table = document.querySelector('#services-table');
                 datatable = $(table).DataTable({
                     bFilter: false,
                     info: false,
@@ -38,28 +38,36 @@
                             orderable: false
                         },
                         {
-                            data: 'system_number',
-                            name: 'system_number'
+                            data: 'image',
+                            name: 'image',
+                            searchable: false,
+                            orderable: false
                         },
                         {
 
-                            data: 'name',
-                            name: 'name',
+                            data: 'details',
+                            name: 'details',
                             searchable: false,
                             orderable: false
                         },
 
                         {
-                            data: 'phone',
-                            name: 'phone'
-                        },
-                        {
-                            data: 'email',
-                            name: 'email'
-                        },
-                        {
                             data: 'status',
                             name: 'status'
+                        },
+                        {
+                            data: 'views_count',
+                            name: 'views_count'
+                        },
+                        {
+                            data: 'created_at',
+                            name: 'created_at',
+                            type: 'num',
+                            render: {
+                                _: 'display',
+                                sort: 'timestamp'
+                            },
+                            searchable: false,
                         },
                         {
                             data: 'action',
@@ -139,15 +147,15 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="listing-table datatable" id="staff-table">
+                    <table class="listing-table datatable" id="services-table">
                         <thead>
                             <tr>
                                 <th>SN</th>
-                                <th>System Number</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
+                                <th>Image</th>
+                                <th>Details</th>
                                 <th>Status</th>
+                                <th>Views</th>
+                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
