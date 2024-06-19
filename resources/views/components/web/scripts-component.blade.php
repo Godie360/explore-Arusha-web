@@ -10,6 +10,11 @@
 <script src="{{ asset('admin/assets/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 
 @stack('scripts')
+<script>
+    $('.modal').on('hidden.bs.modal', function() {
+        $(this).find('form')[0].reset();
+    });
+</script>
 
 
 <script>

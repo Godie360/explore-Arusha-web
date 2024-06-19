@@ -1,4 +1,28 @@
 <x-vendor-layout>
+    @push('styles')
+        <style>
+            .category-listing ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .category-listing li {
+                margin-right: 10px;
+            }
+
+            .custom_check {
+                display: flex;
+                align-items: center;
+            }
+
+            .custom_check input[type="checkbox"] {
+                margin-right: 5px;
+            }
+        </style>
+    @endpush
     @push('scripts')
         <script src="{{ asset('admin/assets/js/ckeditor.js') }}"></script>
         <script>
@@ -326,96 +350,25 @@
                     </div>
                 </div>
                 <div class="row">
+
                     <div class="form-set">
-                        <label class="col-form-label label-heading">Service Features </label>
-                        <div class="row category-listing">
-                            <div class="col-lg-4">
-                                <ul>
+                        <label class="col-form-label label-heading">Service Features</label>
+                        <div class="category-listing">
+                            <ul>
+                                @foreach ($amenities as $item)
                                     <li>
                                         <label class="custom_check">
-                                            <input type="checkbox" name="wireless-internet">
-                                            <span class="checkmark"></span> Automotive
+                                            <input type="checkbox" name="amenity_ids[]" value="{{ $item->id }}">
+                                            <span class="checkmark"></span> {{ $item->name }}
                                         </label>
                                     </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="accept-credit-card">
-                                            <span class="checkmark"></span> Electronics
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="Coupouns">
-                                            <span class="checkmark"></span> Fashion Style
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="parking-street">
-                                            <span class="checkmark"></span> Health Care
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="wireless-internet">
-                                            <span class="checkmark"></span> Job board
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="accept-credit-card">
-                                            <span class="checkmark"></span> Education
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="Coupouns">
-                                            <span class="checkmark"></span> Real Estate
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="parking-street">
-                                            <span class="checkmark"></span> Travel
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="wireless-internet">
-                                            <span class="checkmark"></span> Sports & Game
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="accept-credit-card">
-                                            <span class="checkmark"></span> Magazines
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="Coupouns">
-                                            <span class="checkmark"></span> Pet & Animal
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="parking-street">
-                                            <span class="checkmark"></span> Household
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
+
                 </div>
+
                 <div class="row">
                     <div class="form-row col-md-4">
                         <div class="form-set">
@@ -510,7 +463,7 @@
                     <div class="form-row col-md-4">
                         <div class="form-set">
                             <label class="col-form-label required" for="email">Email Address</label>
-                            <input name="email" type="tel"
+                            <input name="email" type="email"
                                 class="form-control @error('email') is-invalid @enderror"
                                 value="{{ old('email') }}" placeholder="Enter Email Address" required>
                             @error('email')
@@ -539,54 +492,23 @@
                         <div class="form-set">
                             <label class="col-form-label" for="description">Description</label>
                             <textarea id="description" name="description">{{ old('description') }}</textarea>
-
-
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <div class=" media-section">
-                    <h4>Media Information </h4>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 featured-img1">
-                            <h6 class="media-title">Featured Image</h6>
-                            <div class="media-image ">
-                                <img src="{{ asset('assets/img/mediaimg-2.jpg') }}" alt>
-                            </div>
-                            <div class="settings-upload-btn">
-                                <input type="file" accept="image/*" name="image"
-                                    class="hide-input image-upload" id="file">
-                                <label for="file" class="file-upload">Upload File</label>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="gallery-media">
-                        <h6 class="media-title">Gallery</h6>
-                        <div class="galleryimg-upload">
-                            <div class="gallery-upload">
-                                <img src="{{ asset('assets/img/gallery/gallerymedia-1.jpg') }}" class="img-fluid" alt>
-                                <a href="javascript:void(0)" class="profile-img-del"><i
-                                        class="feather-trash-2"></i></a>
-                            </div>
-                            <div class="gallery-upload">
-                                <img src="{{ asset('assets/img/gallery/gallerymedia-2.jpg') }}" class="img-fluid" alt>
-                                <a href="javascript:void(0)" class="profile-img-del"><i
-                                        class="feather-trash-2"></i></a>
-                            </div>
-                        </div>
-                        <div class="settings-upload-btn">
-                            <input type="file" accept="image/*" name="image" class="hide-input image-upload"
-                                id="file2">
-                            <label for="file2" class="file-upload">Upload File</label>
+                <div class="row">
+                    <div class="form-row col-md-4">
+                        <div class="form-set">
+                            <label class="col-form-label required" for="attachments">Service Gallery</label>
+                            <input name="attachments[]" type="file"
+                                class="form-control @error('attachments') is-invalid @enderror" required multiple>
+                            @error('attachments')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                 </div>
-
-
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

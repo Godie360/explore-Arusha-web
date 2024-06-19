@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NewsCategoryController as AdminNewsCategoryContro
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Users\AmenitiesController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\ServicesController;
 use App\Http\Controllers\Users\StaffsController;
@@ -50,6 +51,10 @@ Route::group(['as' => 'web.'], function () {
         Route::post('/change-password', [DashboardController::class, 'change_password'])->name('change.password');
         Route::resource('staff-type', StaffTypeController::class);
         Route::resource('staffs', StaffsController::class);
+
+        Route::group(['as' => 'services.', 'prefix' => 'services'], function () {
+            Route::resource('amenities', AmenitiesController::class);
+        });
         Route::resource('services', ServicesController::class);
     });
 });

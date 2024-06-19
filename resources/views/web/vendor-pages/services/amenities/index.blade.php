@@ -1,17 +1,14 @@
-<x-admin-layout>
+<x-vendor-layout>
+
     @push('scripts')
         <script>
             (function() {
                 "use strict";
-                var datatable_url = "{{ route('admin.news-categories.index') }}";
+                var datatable_url = "{{ route('web.users.services.amenities.index') }}";
                 var table;
                 var datatable;
-                table = document.querySelector('#news-table');
+                table = document.querySelector('#amenity-table');
                 datatable = $(table).DataTable({
-                    bFilter: false,
-                    sDom: "fBtlpi",
-                    pagingType: "numbers",
-                    ordering: true,
                     processing: true,
                     serverSide: true,
                     lengthMenu: [
@@ -25,11 +22,11 @@
                         data: function(d) {},
                         error: function(xhr, errorType, exception) {
                             // Reload the page on error
-                            location.reload();
+                            // location.reload();
                         }
                     },
                     order: [
-                        [2, 'DESC'],
+                        [3, 'DESC'],
                     ],
                     columns: [{
                             data: 'DT_RowIndex',
@@ -39,9 +36,11 @@
                         },
                         {
                             data: 'name',
-                            name: 'name',
-                            searchable: false,
-                            orderable: false
+                            name: 'name'
+                        },
+                        {
+                            data: 'icon',
+                            name: 'icon'
                         },
                         {
                             data: 'created_at',
@@ -59,7 +58,7 @@
                             searchable: false,
                             orderable: false
                         }
-                    ],
+                    ]
                 });
                 $(document).on('submit', 'form#categ-form', function(e) {
                     e.preventDefault();
@@ -72,25 +71,26 @@
                         dataType: 'json',
                         data: data,
                         success: function(response) {
-                            $('#categ-modal').modal('hide');
+                            $('#add-modal').modal('hide');
                             form.find('button[type="submit"]').prop('disabled', false);
                             datatable.ajax.reload();
-                            $('#categ-modal').modal('hide');
                             Swal.fire({
                                 icon: "success",
                                 title: "Successfuly.",
                                 text: response.message,
                             });
+
+                            $('#add-modal').modal('hide');
                         },
                         error: function(xhr) {
                             var error = JSON.parse(xhr.responseText);
                             form.find('button[type="submit"]').prop('disabled', false);
-                            $('#categ-modal').modal('hide');
                             Swal.fire({
                                 icon: "error",
                                 title: "Oops...",
                                 text: error.message,
                             });
+                            $('#add-modal').modal('hide');
                         }
                     });
                 });
@@ -113,14 +113,16 @@
                             console.log(response);
                             if (dataType == 'view') {
                                 disableFormElements();
-                                $('#view-edit-modal-title').text('View Category');
+                                $('#view-edit-modal-title').text('View Amenity');
                                 $('#view-edit-button').addClass('d-none');
                             } else {
                                 enableFormElements();
-                                $('#view-edit-modal-title').text('Eidt Category');
+                                $('#view-edit-modal-title').text('Eidt Amenity');
                                 $('#view-edit-button').removeClass('d-none');
                             }
                             $("#view-edit-name").val(response.data.name);
+                            $("#view-edit-icon").val(response.data.icon);
+
                             var formUrl = $('#view-edit-form').attr('action');
                             let last = formUrl.split("/").pop();
                             let url = formUrl.replace(last, response.data.id);
@@ -151,15 +153,17 @@
                             $('#view-edit-modal').modal('hide');
                             form.find('button[type="submit"]').prop('disabled', false);
                             datatable.ajax.reload();
-                            $('#view-edit-modal').modal('hide');
                             Swal.fire({
                                 icon: "success",
                                 title: "Successfuly.",
                                 text: response.message,
                             });
-                            form[0].reset();
+
+                            $('#view-edit-modal').modal('hide');
+
                         },
                         error: function(xhr) {
+                            console.log(xhr);
                             var error = JSON.parse(xhr.responseText);
                             form.find('button[type="submit"]').prop('disabled', false);
                             Swal.fire({
@@ -167,7 +171,7 @@
                                 title: "Oops...",
                                 text: error.message,
                             });
-                            form[0].reset();
+
                             $('#view-edit-modal').modal('hide');
                         }
                     });
@@ -198,139 +202,166 @@
                                 },
                                 success: function(response) {
                                     datatable.ajax.reload();
-                                    Lobibox.notify('success', {
-                                        pauseDelayOnHover: true,
-                                        continueDelayOnInactiveTab: false,
-                                        position: 'top right',
-                                        icon: 'bx bx-check-circle',
-                                        sound: false,
-                                        msg: response.message
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Successfuly.",
+                                        text: response.message,
                                     });
                                 },
                                 error: function(xhr) {
                                     var error = JSON.parse(xhr.responseText);
-                                    Lobibox.notify('error', {
-                                        pauseDelayOnHover: true,
-                                        continueDelayOnInactiveTab: false,
-                                        position: 'top right',
-                                        icon: 'bx bx-x-circle',
-                                        sound: false,
-                                        msg: "Sorry, " + error.message
+                                    Swal.fire({
+                                        icon: "error",
+                                        title: "Oops...",
+                                        text: error.message,
                                     });
                                 }
                             });
                         }
                     });
+
+
                 });
             })();
         </script>
     @endpush
-    <div class="content">
-        <div class="content-page-header content-page-headersplit">
-            <h5>All News Categories</h5>
-            <div class="list-btn">
-                <ul>
-                    <li>
-                        <div class="filter-sorting">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);" class="filter-sets"><img
-                                            src="{{ asset('admin/assets/img/icons/filter1.svg    ') }}" class="me-2"
-                                            alt="img">Filter</a>
-                                </li>
-                                <li>
-                                    <span><img src="{{ asset('admin/assets/img/icons/sort.svg') }}" class="me-2"
-                                            alt="img"></span>
-                                    <div class="review-sort">
-                                        <select class="select select2-hidden-accessible" tabindex="-1"
-                                            aria-hidden="true">
-                                            <option>Sort by A - Z</option>
-                                            <option>Sort by Z - A</option>
-                                        </select>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#categ-modal"><i class="fa fa-plus me-2"></i>Create
-                            Category</button>
-                        <div class="modal fade" id="categ-modal" tabindex="-1" aria-labelledby="categ-modalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="categ-modalLabel">Create Category</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body pt-0">
-                                        <form class="row g-3 needs-validation" id="categ-form"
-                                            action="{{ route('admin.news-categories.store') }}" method="POST"
-                                            novalidate>
-                                            @csrf
-                                            <div class="col-md-12">
-                                                <label for="name" class="form-label">Category Name</label>
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    placeholder="Enter Category Name" required>
+
+
+    <div class="dash-listingcontent dashboard-info">
+        <div class="dash-cards card">
+            <div class="card-header">
+                <h4>Lists of Amenities</h4>
+                <a class="nav-link add-listing" href="javascript:void(0)" data-bs-toggle="modal"
+                    data-bs-target="#add-modal">
+                    <span><i class="fa-solid fa-plus"></i></span>Create Amenity
+                </a>
+
+                <div class="modal fade" id="add-modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Create Amenity</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="categ-form" class="needs-validation"
+                                    action="{{ route('web.users.services.amenities.store') }}" method="POST"
+                                    novalidate>
+                                    @csrf
+                                    <div class="row g-3">
+
+                                        <div class="form-row col-md-6">
+                                            <div class="form-set">
+                                                <label class="col-form-label required" for="name">Amenity
+                                                    Name</label>
+                                                <input name="name" type="text"
+                                                    class="form-control @error('name') is-invalid @enderror"
+                                                    value="{{ old('name') }}" placeholder="Enter Amenity Name"
+                                                    required>
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
-                                            <div class="col-md-12">
-                                                <div class="d-md-flex d-grid align-items-center gap-3 float-end">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" id="categ-submit"
-                                                        class="btn btn-primary px-4">
-                                                        Submit
-                                                    </button>
-                                                </div>
+                                        </div>
+                                        <div class="form-row col-md-6">
+                                            <div class="form-set">
+                                                <label class="col-form-label required" for="icon">Amenity
+                                                    Icon</label>
+                                                <input name="icon" type="text"
+                                                    class="form-control @error('icon') is-invalid @enderror"
+                                                    value="{{ old('icon') }}" placeholder="ie: fa-users" required>
+                                                @error('icon')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
-                                        </form>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="d-md-flex d-grid align-items-center gap-3 float-end">
+                                                <button type="reset" class="btn btn-light px-4">
+                                                    Reset
+                                                </button>
+                                                <button type="submit" id="categ-submit" class="btn btn-primary px-4">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+
+                                </form>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 ">
-                <div class="table-resposnive table-div">
-                    <table class="table " id="news-table">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="listing-table datatable" id="amenity-table">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>SN</th>
                                 <th>Name</th>
-                                <th>Date</th>
+                                <th>Icon</th>
+                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                     </table>
                 </div>
+
             </div>
         </div>
-        <div class="modal fade" id="view-edit-modal" tabindex="-1" aria-labelledby="view-edit-modalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="view-edit-modal-title">Edit Category</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body pt-0">
-                        <form class="row g-3 needs-validation" id="view-edit-form"
-                            action="{{ route('admin.news-categories.update', ':update') }}" method="POST" novalidate>
-                            @csrf
-                            @method('PUT')
-                            <div class="col-md-12">
-                                <label for="name" class="form-label">Category Name</label>
-                                <input type="text" class="form-control" name="name" id="view-edit-name"
-                                    placeholder="Enter Category Name" required>
-                                <div class="valid-feedback">
-                                    Looks good!
+    </div>
+
+
+    <div class="modal fade" id="view-edit-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="view-edit-modal-title">Edit Amenity</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="view-edit-form" class="needs-validation"
+                        action="{{ route('web.users.services.amenities.update', ':id') }}" method="POST" novalidate>
+                        @csrf
+                        @method('PUT')
+                        <div class="row g-3">
+
+                            <div class="form-row col-md-6">
+                                <div class="form-set">
+                                    <label class="col-form-label required" for="name">Amenity
+                                        Name</label>
+                                    <input name="name" type="text" id="view-edit-name"
+                                        class="form-control @error('name') is-invalid @enderror"
+                                        value="{{ old('name') }}" placeholder="Enter Amenity Name" required>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
+                            <div class="form-row col-md-6">
+                                <div class="form-set">
+                                    <label class="col-form-label required" for="icon">Amenity
+                                        Icon</label>
+                                    <input name="icon" type="text" id="view-edit-icon"
+                                        class="form-control @error('icon') is-invalid @enderror"
+                                        value="{{ old('icon') }}" placeholder="ie: fa-users" required>
+                                    @error('icon')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="col-md-12">
                                 <div class="d-md-flex d-grid align-items-center gap-3 float-end">
                                     <button type="reset" class="btn btn-light px-4">
@@ -341,9 +372,11 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
-</x-admin-layout>
+    </div>
+</x-vendor-layout>

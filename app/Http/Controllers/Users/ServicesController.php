@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller;
 use App\Models\CountryModel;
 use App\Models\RegionModel;
+use App\Models\Service\AmenityModel;
 use App\Models\Service\CategoryModel;
+use App\Models\Service\ServiceAmenityModel;
 use App\Models\Service\ServiceModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -50,7 +52,8 @@ class ServicesController extends Controller
         $countries = CountryModel::orderBy('name', 'ASC')->get();
         $regions = RegionModel::orderBy('name', 'ASC')->get();
         $categories = CategoryModel::orderBy('name', 'ASC')->get();
-        return view('web.vendor-pages.services.create', compact('countries', 'regions', 'categories'));
+        $amenities = AmenityModel::where('company_id', auth()->user()->company->id)->orderBy('name', 'ASC')->get();
+        return view('web.vendor-pages.services.create', compact('countries', 'regions', 'categories', 'amenities'));
     }
 
     /**
@@ -86,6 +89,15 @@ class ServicesController extends Controller
         ]);
 
         $service = ServiceModel::create($request->except('_token'));
+        if ($service) {
+            foreach ($request->amenity_ids as $amenity) {
+                ServiceAmenityModel::create([
+                    'service_id' => $service->id,
+                    'amenity_id' => $amenity,
+                ]);
+            }
+            patchFile($service, ServiceAmenityModel::class, "id", false, "attachments");
+        }
         DB::commit();
         return $service;
     }
