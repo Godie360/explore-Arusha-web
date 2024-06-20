@@ -9,7 +9,8 @@ use App\Http\Controllers\Admin\VendorController as AdminVendorController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\ServicesController;
-use App\Http\Controllers\ListController;
+use App\Http\Controllers\ListController; 
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\Users\StaffsController;
 use App\Http\Controllers\Users\StaffTypeController;
 use App\Http\Controllers\VendorController;
@@ -39,6 +40,9 @@ Route::group(['as' => 'web.'], function () {
     Route::resource('listing', ListController::class);
     Route::get('/list-detail', [ListController::class, 'detail'])->name('listing.detail');
     Route::get('/listing-list', [ListController::class, 'listing_list'])->name('listing.listing_list');
+    Route::resource('explore', ExploreController::class);
+    Route::get('/explore-detail', [ExploreController::class, 'explore_detail'])->name('explore.explore-details');
+
 
 
 

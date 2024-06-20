@@ -16,7 +16,7 @@ class ListController extends Controller
         return view('web.listing.detail');
     }
 
-    public function detailList() 
+    public function listing_list() 
     {
         return view('web.listing.listing_list');
     }

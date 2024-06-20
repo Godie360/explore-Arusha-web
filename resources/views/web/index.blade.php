@@ -101,6 +101,497 @@
                 </div>
             </div>
         </section>
+
+
+
+        <section class="celebrate-section">
+          <div class="container">
+          <div class="section-heading-two text-center">
+          <div class="row">
+          <div class="col-md-12 aos" data-aos="fade-up">
+          <p>Visit Arusha</p>
+          <h2>Explore Arusha & It's Culture</h2>
+        
+          </div>
+          </div>
+          </div>
+          <div class="owl-carousel celebrate-slider">
+          <div class="item">
+          <div class="celebrate-wrap aos" data-aos="fade-up">
+          <div class="celebrate-img">
+          <img src="{{ asset('images/girrafe (2).jpg') }}" alt="img">
+          <div class="play-btn">
+          <a href="https://youtu.be/JG5znweDBXU?si=jjyGATfTxnI-xljT" data-fancybox class="play-icon"><i class="fa-solid fa-play"></i></a>
+          <span class="animate-circle"></span>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </section>
+
+         
+      <section class="perfect-holiday-cabin-section">
+        <div class="holiday-cabin-img-slider owl-carousel">
+          <div class="item">
+            <img
+              src="assets/img/bg/holiday-cabin-slider-img-1.jpg"
+              class="img-fluid"
+              alt
+            />
+            <div class="container">
+              <div class="holiday-cabin-info" data-aos="fade-up">
+                <div class="rate-per-day">
+                  <span>$64 /</span>
+                  <h6>Per night</h6>
+                </div>
+                <div class="section-heading">
+                  <h2>Perfect Holiday Cabin</h2>
+                  <p>
+                    Spectacular Condo In Summerlin! View of Spring Mountains and
+                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
+                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
+                    Microwave , Open And Spacious Floorplan! Great Summerlin
+                    Location!
+                  </p>
+                </div>
+                <div class="room-categories">
+                  <span
+                    ><img
+                      src="assets/img/icons/area-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Area:56000/m2</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/bed-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Beds:3</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/floor-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Floors:4</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/guest-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Guest:4</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="assets/img/bg/holiday-cabin-slider-img-2.jpg"
+              class="img-fluid"
+              alt
+            />
+            <div class="container">
+              <div class="holiday-cabin-info">
+                <div class="rate-per-day">
+                  <span>$64</span>
+                  <h6>Per night</h6>
+                </div>
+                <div class="section-heading">
+                  <h2>Perfect Holiday Cabin</h2>
+                  <p>
+                    Spectacular Condo In Summerlin! View of Spring Mountains and
+                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
+                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
+                    Microwave , Open And Spacious Floorplan! Great Summerlin
+                    Location!
+                  </p>
+                </div>
+                <div class="room-categories">
+                  <span
+                    ><img
+                      src="assets/img/icons/area-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Area:56000/m2</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/bed-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Beds:3</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/floor-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Floors:4</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/guest-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Guest:4</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="assets/img/bg/holiday-cabin-slider-img-1.jpg"
+              class="img-fluid"
+              alt
+            />
+            <div class="container">
+              <div class="holiday-cabin-info">
+                <div class="rate-per-day">
+                  <span>$64</span>
+                  <h6>Per night</h6>
+                </div>
+                <div class="section-heading">
+                  <h2>Perfect Holiday Cabin</h2>
+                  <p>
+                    Spectacular Condo In Summerlin! View of Spring Mountains and
+                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
+                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
+                    Microwave , Open And Spacious Floorplan! Great Summerlin
+                    Location!
+                  </p>
+                </div>
+                <div class="room-categories">
+                  <span
+                    ><img
+                      src="assets/img/icons/area-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Area:56000/m2</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/bed-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Beds:3</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/floor-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Floors:4</span
+                  >
+                  <span
+                    ><img
+                      src="assets/img/icons/guest-icon.svg"
+                      class="img-fluid"
+                      alt
+                    />Guest:4</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+       
+      <section class="gallery-section-five">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading heading-five aos" data-aos="fade-up">
+                      <h2>Popular Place & Activities in Arusha</h2>
+                  
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 aos" data-aos="fade-up">
+                    <div class="gal-wrap">
+                        <img src="{{ asset('images/meru.jpeg') }}" class="img-fluid" alt="img">
+                        <div class="city-overlay city-five-overlay">
+                            <div class="city-name">
+                                <h5>Arusha National Park</h5>
+                                <p>Tourism Attraction</p>
+                            </div>
+                            <div class="rating d-flex">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 aos" data-aos="fade-up">
+                    <div class="gal-wrap">
+                        <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt="img">
+                        <div class="city-overlay city-five-overlay">
+                            <div class="city-name">
+                                <h5>Arusha Cultural Heritage</h5>
+                                <p>Tourism Attraction</p>
+                            </div>
+                            <div class="rating d-flex">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gal-wrap">
+                        <img src="{{ asset('images/olduvai gorge.jpg') }}" class="img-fluid" alt="img">
+                        <div class="city-overlay city-five-overlay">
+                            <div class="city-name">
+                                <h5>Oldvai Gorge</h5>
+                            </div>
+                            <div class="rating d-flex">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gal-wrap">
+                      <img src="{{ asset('images/shanga-arusha-coffee-lodge.jpg.webp') }}" class="img-fluid" alt="img">
+                      <div class="city-overlay city-five-overlay">
+                          <div class="city-name">
+                              <h5>SHANGA</h5>
+                              <p>The Home Of Beads</p>
+                          </div>
+                          <div class="rating d-flex">
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 aos" data-aos="fade-up">
+                    <div class="gal-wrap">
+                        <img src="{{ asset('images/lake duluti.jpg') }}" class="img-fluid" alt="img">
+                        <div class="city-overlay city-five-overlay">
+                            <div class="city-name">
+                                <h5>Lake Duluti</h5>
+                            </div>
+                            <div class="rating d-flex">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gal-wrap">
+                        <img src="{{ asset('images/oldonyo.jpg') }}" class="img-fluid" alt="img">
+                        <div class="city-overlay city-five-overlay">
+                            <div class="city-name">
+                                <h5>Oldonyo Lengai</h5>
+                                <p></p>
+                            </div>
+                            <div class="rating d-flex">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i> 
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gal-wrap">
+                      <img src="{{ asset('images/Arusha_City_view.jpg') }}" class="img-fluid" alt="img">
+                      <div class="city-overlay city-five-overlay">
+                          <div class="city-name">
+                              <h5>Arusha Town</h5>
+                          </div>
+                          <div class="rating d-flex">
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i> 
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                              <i class="fas fa-star filled"></i>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+              
+      <section class="property-articles">
+        <div class="container">
+          <div
+            class="section-heading section-heading-nine aos"
+            data-aos="fade-up"
+          >
+            <div class="row align-items-center">
+              <div class="col-md-9 aos aos-init aos-animate" data-aos="fade-up">
+                <h2>Recent Articles</h2>
+                <p>The most trendy accommodations available</p>
+              </div>
+              <div
+                class="col-md-3 text-md-end aos aos-init aos-animate"
+                data-aos="fade-up"
+              >
+                <a href="categories.html" class="btn btn-view"
+                  >View all Properties</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 aos" data-aos="fade-up">
+              <div class="car-class-carousel">
+                <div class="owl-carousel blog-slider">
+                  <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                    <div class="blog-image">
+                      <a href="blog-details.html"
+                        ><img
+                          class="img-fluid"
+                          src="assets/img/blog/property-blog-1.jpg"
+                          alt="Post Image"
+                      /></a>
+                    </div>
+                    <div class="blog-content">
+                      <h3 class="blog-title">
+                        <a href="blog-details.html"
+                          >Skills That You Can Learn In The Real Estate
+                          Market</a
+                        >
+                      </h3>
+                      <ul class="entry-meta meta-item">
+                        <li class="date-icon">
+                          <i class="feather-calendar"></i> 7 Jan 2023
+                        </li>
+                      </ul>
+                      <p class="blog-description">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text.
+                      </p>
+                      <div class="viewlink">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                    <div class="blog-image">
+                      <a href="blog-details.html"
+                        ><img
+                          class="img-fluid"
+                          src="assets/img/blog/property-blog-2.jpg"
+                          alt="Post Image"
+                      /></a>
+                    </div>
+                    <div class="blog-content">
+                      <h3 class="blog-title">
+                        <a href="blog-details.html"
+                          >5 Essential Steps for Buying an Investment</a
+                        >
+                      </h3>
+                      <ul class="entry-meta meta-item">
+                        <li class="date-icon">
+                          <i class="feather-calendar"></i> 15 Jan 2023
+                        </li>
+                      </ul>
+                      <p class="blog-description">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text.
+                      </p>
+                      <div class="viewlink">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                    <div class="blog-image">
+                      <a href="blog-details.html"
+                        ><img
+                          class="img-fluid"
+                          src="assets/img/blog/property-blog-3.jpg"
+                          alt="Post Image"
+                      /></a>
+                    </div>
+                    <div class="blog-content">
+                      <h3 class="blog-title">
+                        <a href="blog-details.html"
+                          >Bedroom Colors You’ll Never Regret</a
+                        >
+                      </h3>
+                      <ul class="entry-meta meta-item">
+                        <li class="date-icon">
+                          <i class="feather-calendar"></i> 27 Feb 2023
+                        </li>
+                      </ul>
+                      <p class="blog-description">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text.
+                      </p>
+                      <div class="viewlink">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                    <div class="blog-image">
+                      <a href="blog-details.html"
+                        ><img
+                          class="img-fluid"
+                          src="assets/img/blog/property-blog-1.jpg"
+                          alt="Post Image"
+                      /></a>
+                    </div>
+                    <div class="blog-content">
+                      <h3 class="blog-title">
+                        <a href="blog-details.html"
+                          >Skills That You Can Learn In The Real Estate
+                          Market</a
+                        >
+                      </h3>
+                      <ul class="entry-meta meta-item">
+                        <li class="date-icon">
+                          <i class="feather-calendar"></i> 28 Mar 2023
+                        </li>
+                      </ul>
+                      <p class="blog-description">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text.
+                      </p>
+                      <div class="viewlink">
+                        <a href="blog-details.html">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
         <footer class="footer-blk footer-three">
             <div class="container">
                 <div class="row">
