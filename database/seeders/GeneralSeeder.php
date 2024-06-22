@@ -20,6 +20,7 @@ use Faker\Factory as Faker;
 
 class GeneralSeeder extends Seeder
 {
+    
     /**
      * Run the database seeds.
      */
