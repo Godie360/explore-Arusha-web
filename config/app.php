@@ -189,6 +189,7 @@ return [
         'ComplaintStatusEnum' => \App\Enums\ComplaintStatusEnum::class,
         'CompanyStatusEnum' => \App\Enums\CompanyStatusEnum::class,
         'GenderEnum' => \App\Enums\GenderEnum::class,
+        'CompanyTypeEnum' => \App\Enums\CompanyTypeEnum::class,
     ])->toArray(),
 
 ];

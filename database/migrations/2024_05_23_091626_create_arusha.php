@@ -13,6 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create("document_types", function (Blueprint $table) {
+            $table->string("id")->primary();
+            $table->string("name");
+            $table->string("key");
+            $table->timestamps();
+        });
         Schema::create('countries', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
@@ -38,12 +44,7 @@ return new class extends Migration
             $table->mediumText("description");
             $table->timestamps();
         });
-        Schema::create("document_types", function (Blueprint $table) {
-            $table->string("id")->primary();
-            $table->string("name");
-            $table->string("key");
-            $table->timestamps();
-        });
+
         Schema::create('companies', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('company_id')->unique();
