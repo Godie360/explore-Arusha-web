@@ -26,7 +26,7 @@
                 <a href>Vendors <i class="fas fa-chevron-down"></i></a>
                 <ul class="submenu">
                     <li><a href="{{ route('web.vendor.registration.index') }}">Registration</a></li>
-                    <li><a href="#">Verification</a></li>
+                    <li><a href="{{ route('web.vendor.verification.index') }}">Verification</a></li>
                 </ul>
             </li>
             <li><a href="{{route('web.listings.index')}}" class="{{ request()->routeIs('web.listings.*') ? 'active' : '' }}">Listing</a></li>

@@ -18,7 +18,6 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\WebController;
 use App\View\Components\VendorLayout;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,22 +38,17 @@ Route::group(['as' => 'web.'], function () {
     Route::post('/complaints', [WebController::class, 'complaints_store'])->name('complaints.store');
     Route::get('/fetch_districts', [WebController::class, 'fetch_districts'])->name('fetch_districts');
     Route::get('/fetch_subcategories', [WebController::class, 'fetch_subcategories'])->name('fetch_subcategories');
-
     Route::resource('news', NewsController::class);
     Route::post('/listings/{listing}/review', [ListController::class, 'review'])->name('listings.review');
     Route::resource('listings', ListController::class);
-
     Route::resource('explore', ExploreController::class);
     Route::get('/explore-detail', [ExploreController::class, 'explore_detail'])->name('explore.explore-details');
-
-
-
-
     Route::group(['as' => 'vendor.', 'prefix' => 'vendor'], function () {
         Route::get('/registration', [VendorController::class, 'registration'])->name('registration.index');
         Route::post('/registration', [VendorController::class, 'registration_store'])->name('registration.store');
+        Route::get('/verification', [VendorController::class, 'verification'])->name('verification.index');
+        Route::post('/verification', [VendorController::class, 'verification_store'])->name('verification.store');
     });
-
     Route::group(['as' => 'users.', 'prefix' => 'users', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile.index');
@@ -62,18 +56,14 @@ Route::group(['as' => 'web.'], function () {
         Route::post('/change-password', [DashboardController::class, 'change_password'])->name('change.password');
         Route::resource('staff-type', StaffTypeController::class);
         Route::resource('staffs', StaffsController::class);
-
         Route::group(['as' => 'services.', 'prefix' => 'services'], function () {
             Route::resource('amenities', AmenitiesController::class);
         });
         Route::resource('services', ServicesController::class);
     });
 });
-
-
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
-
     Route::group(['prefix' => 'news-updates'], function () {
         Route::get('/news/status/{id}', [AdminNewsController::class, 'status'])->name('news.status');
         Route::resource('news-categories', AdminNewsCategoryController::class);
