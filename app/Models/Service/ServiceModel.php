@@ -21,10 +21,13 @@ class ServiceModel extends Model
     protected $fillable = [
         "title", "featured_image", "slug", "short_description", "description", "promo_video", "website",
         "address", "phone", "email", "location", "min_price", "max_price", "category_id", "sub_category_id",
-        "currency_id", "company_id", "user_id", "verified_at", "status", "views_count","rate"
+        "currency_id", "company_id", "user_id", "verified_at", "status", "views_count", "rate",'review_count', 'published_at'
     ];
 
     public $incrementing = false;
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
     public static function boot()
     {
         parent::boot();

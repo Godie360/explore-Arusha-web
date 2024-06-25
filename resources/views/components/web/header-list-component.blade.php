@@ -29,7 +29,7 @@
                     <li><a href="#">Verification</a></li>
                 </ul>
             </li>
-            <li><a href="{{route('web.listing.index')}}" class="{{ request()->routeIs('') ? 'active' : '' }}">Listing</a></li>   
+            <li><a href="{{route('web.listings.index')}}" class="{{ request()->routeIs('web.listings.*') ? 'active' : '' }}">Listing</a></li>
             <li><a href="{{ route('web.news.index') }}"
                     class="{{ request()->routeIs('web.news.*') ? 'active' : '' }}">News</a></li>
             <li><a href="{{ route('web.complaints.index') }}"

@@ -193,7 +193,7 @@ return new class extends Migration
             $table->string("short_description");
             $table->mediumText("description");
             $table->string("promo_video")->nullable();
-            $table->string("website");
+            $table->string("website")->nullable();
             $table->string("address");
             $table->string("phone");
             $table->string("email");
@@ -209,7 +209,7 @@ return new class extends Migration
             $table->string("company_id");
             $table->foreign("company_id")->references("id")->on("companies");
             $table->string("user_id");
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamp("verified_at")->nullable();
             $table->tinyInteger("status")->default(0);
             $table->tinyInteger("views_count")->default(0);
@@ -238,7 +238,7 @@ return new class extends Migration
             $table->string('file');
             $table->nullableUuidMorphs('filable');
             $table->string("user_id")->nullable();
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
         Schema::create('reviews', function (Blueprint $table) {
@@ -258,7 +258,7 @@ return new class extends Migration
             $table->nullableUuidMorphs('viewable');
             $table->mediumText("agent")->nullable();
             $table->string("user_id")->nullable();
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -288,7 +288,7 @@ return new class extends Migration
             $table->dateTime('readed_on')->nullable();
             $table->dateTime('completed_on')->nullable();
             $table->uuid('user_id')->nullable();
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
         Schema::create('suggestions', function (Blueprint $table) {
@@ -303,7 +303,7 @@ return new class extends Migration
             $table->mediumText('agent')->nullable();
             $table->dateTime('readed_on')->nullable();
             $table->uuid('user_id')->nullable();
-            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
         Schema::create('contacts', function (Blueprint $table) {

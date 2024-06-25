@@ -10,7 +10,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Users\AmenitiesController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\ServicesController;
-use App\Http\Controllers\ListController; 
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\Users\StaffsController;
 use App\Http\Controllers\Users\StaffTypeController;
@@ -41,9 +41,9 @@ Route::group(['as' => 'web.'], function () {
     Route::get('/fetch_subcategories', [WebController::class, 'fetch_subcategories'])->name('fetch_subcategories');
 
     Route::resource('news', NewsController::class);
-    Route::resource('listing', ListController::class);
-    Route::get('/list-detail', [ListController::class, 'detail'])->name('listing.detail');
-    Route::get('/listing-list', [ListController::class, 'listing_list'])->name('listing.listing_list');
+    Route::post('/listings/{listing}/review', [ListController::class, 'review'])->name('listings.review');
+    Route::resource('listings', ListController::class);
+
     Route::resource('explore', ExploreController::class);
     Route::get('/explore-detail', [ExploreController::class, 'explore_detail'])->name('explore.explore-details');
 

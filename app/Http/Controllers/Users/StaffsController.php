@@ -24,7 +24,7 @@ class StaffsController extends Controller
     {
 
         if ($request->ajax()) {
-            $staffs = StaffModel::query();
+            $staffs = StaffModel::where('company_id', auth()->user()->company->id);
             return DataTables::of($staffs)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($data) {
@@ -51,7 +51,7 @@ class StaffsController extends Controller
     public function create()
     {
         $id_types = IdTypeModel::all();
-        $staff_types = StaffTypeModel::orderBy('name', 'ASC')->get();
+        $staff_types = StaffTypeModel::orderBy('name', 'ASC')->where('company_id', auth()->user()->company->id)->get();
         $countries = CountryModel::orderBy('name', 'ASC')->get();
 
         return view('web.vendor-pages.staffs.create', compact('id_types', 'countries', 'staff_types'));

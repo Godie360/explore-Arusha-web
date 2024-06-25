@@ -111,7 +111,7 @@
           <div class="col-md-12 aos" data-aos="fade-up">
           <p>Visit Arusha</p>
           <h2>Explore Arusha & It's Culture</h2>
-        
+
           </div>
           </div>
           </div>
@@ -131,7 +131,7 @@
           </div>
           </section>
 
-         
+
       <section class="perfect-holiday-cabin-section">
         <div class="holiday-cabin-img-slider owl-carousel">
           <div class="item">
@@ -304,14 +304,14 @@
 
 
 
-       
+
       <section class="gallery-section-five">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading heading-five aos" data-aos="fade-up">
                       <h2>Popular Place & Activities in Arusha</h2>
-                  
+
                     </div>
                 </div>
             </div>
@@ -408,7 +408,7 @@
                             </div>
                             <div class="rating d-flex">
                                 <i class="fas fa-star filled"></i>
-                                <i class="fas fa-star filled"></i> 
+                                <i class="fas fa-star filled"></i>
                                 <i class="fas fa-star filled"></i>
                                 <i class="fas fa-star filled"></i>
                                 <i class="fas fa-star filled"></i>
@@ -423,7 +423,7 @@
                           </div>
                           <div class="rating d-flex">
                               <i class="fas fa-star filled"></i>
-                              <i class="fas fa-star filled"></i> 
+                              <i class="fas fa-star filled"></i>
                               <i class="fas fa-star filled"></i>
                               <i class="fas fa-star filled"></i>
                               <i class="fas fa-star filled"></i>
@@ -436,7 +436,7 @@
     </section>
 
 
-              
+
       <section class="property-articles">
         <div class="container">
           <div
@@ -634,7 +634,7 @@
                                                             <a href="#">About Us</a>
                                                         </li>
                                                         <li>
-                                                            <a href="{{route('web.listing.index')}}">Listing</a>
+                                                            <a href="{{route('web.listings.index')}}">Listing</a>
                                                         </li>
 
                                                         <li><a href="#">Our Blog</a></li>

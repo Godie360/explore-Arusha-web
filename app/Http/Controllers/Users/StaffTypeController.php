@@ -18,7 +18,7 @@ class StaffTypeController extends Controller
     {
 
         if ($request->ajax()) {
-            $staff_types = StaffTypeModel::query();
+            $staff_types = StaffTypeModel::where('company_id', auth()->user()->company->id);
             return DataTables::of($staff_types)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($data) {

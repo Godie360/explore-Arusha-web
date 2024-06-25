@@ -1,21 +1,39 @@
 <x-web-layout>
+    @push('styles')
+        <style>
+            .blog-img .img-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 75%;
+                overflow: hidden;
+            }
+
+            .blog-img .img-container img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        </style>
+    @endpush
     <div class="breadcrumb-bar">
         <div class="container">
             <div class="row align-items-center text-center">
                 <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title">Listings-Grid</h2>
+                    <h2 class="breadcrumb-title">Listings</h2>
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Grid</li>
+                            <li class="breadcrumb-item"><a href="{{ route('web.index') }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Listing</li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-
-
     <div class="list-content">
         <div class="container">
             <div class="row">
@@ -25,8 +43,7 @@
                             <h4><img src="assets/img/details-icon.svg" alt="details-icon"> Filter</h4>
                             <form>
                                 <div class="filter-content looking-input form-set">
-                                    <input type="text" class="form-control"
-                                        placeholder="What are you looking for?">
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
                                 </div>
                                 <div class="filter-content form-set">
                                     <select class="form-control select category-select">
@@ -38,8 +55,7 @@
                                 </div>
                                 <div class="filter-content looking-input form-set input-placeholder">
                                     <div class="group-img">
-                                        <input type="text" class="form-control"
-                                            placeholder="Where to look?">
+                                        <input type="text" class="form-control" placeholder="Where to look?">
                                         <i class="feather-map-pin"></i>
                                     </div>
                                 </div>
@@ -111,8 +127,8 @@
                                         <input type="text" class="form-control me-0" placeholder="Max">
                                     </div>
                                     <div class="search-btn">
-                                        <button class="btn btn-primary" type="submit"><i
-                                                class="fa fa-search" aria-hidden="true"></i> Search</button>
+                                        <button class="btn btn-primary" type="submit"><i class="fa fa-search"
+                                                aria-hidden="true"></i> Search</button>
                                         <button class="btn btn-reset mb-0" type="submit"> <i
                                                 class="fas fa-light fa-arrow-rotate-right"></i>Reset
                                             Filters</button>
@@ -148,7 +164,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{route('web.listing.index')}}" class="active">
+                                        <a href="{{ route('web.listings.index') }}" class="active">
                                             <i class="feather-grid"></i>
                                         </a>
                                     </li>
@@ -158,446 +174,74 @@
                     </div>
                     <div class="grid-view listgrid-sidebar">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="{{route('web.listing.detail')}}">
-                                                <img src="assets/img/list/listgrid-1.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
+
+                            @foreach ($services as $item)
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="card">
+                                        <div class="blog-widget">
+                                            <div class="blog-img">
+                                                <a href="{{ route('web.listings.show', ['listing' => $item->slug]) }}">
+                                                    <div class="img-container">
+                                                        <img src="{{ $item->featured_image }}"
+                                                            class="img-fluid list-img" alt="blog-img">
+                                                    </div>
                                                 </a>
+                                                <div class="fav-item">
+                                                    <span class="featured-text">Featured</span>
+                                                    <a href="javascript:void(0)" class="fav-icon">
+                                                        <i class="feather-heart"></i>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-02.jpg"
-                                                            alt="author">
+                                            <div class="bloglist-content">
+                                                <div class="card-body">
+                                                    <div class="blogfeaturelink">
+                                                        <div class="grid-author">
+                                                            <img src="{{ $item->user->profile_photo_path }}"
+                                                                alt="author">
+                                                        </div>
+                                                        <div class="blog-features">
+                                                            <a href="javascript:void(0)"><span> <i
+                                                                        class="fa-regular fa-list-alt"></i>{{ $item->category->name }}</span></a>
+                                                        </div>
+                                                        <div class="blog-author text-end">
+                                                            <span> <i class="feather-eye"></i>{{ $item->views_count }}
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Vehicle</span></a>
+                                                    <h6><a
+                                                            href="{{ route('web.listings.show', ['listing' => $item->slug]) }}">{{ $item->title }}</a>
+                                                    </h6>
+                                                    <div class="blog-location-details">
+                                                        <div class="location-info">
+                                                            <i class="feather-map-pin"></i>{{ $item->address }}
+                                                        </div>
+                                                        <div class="location-info">
+                                                            <i class="fa-solid fa-calendar-days"></i>
+                                                            {{ $item->created_at->format('d M, Y') }}
+                                                        </div>
                                                     </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="{{route('web.listing.detail')}}">2017 Gulfsteam
-                                                        Ameri-lite</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
+                                                    <div class="amount-details">
+                                                        <div class="amount">
+                                                            @if ($item->min_price)
+                                                                <span class="validrate">$350</span>
+                                                                {{-- <span>$450</span> --}}
+                                                            @endif
+
+                                                        </div>
+                                                        <div class="ratings">
+                                                            <span>{{ $item->rate }}</span>
+                                                            ({{ $item->review_count }})
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="{{route('web.listing.detail')}}">
-                                                <img src="assets/img/list/listgrid-2.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-07.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Construction</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">Villa 457 sq.m. In Benidorm
-                                                        Fully Qquipped House</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-3.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-02.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Electronics</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">Customized Apple iMac 21.5"
-                                                        All-In</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-4.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-04.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Electronics</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">Fashion Luxury Men Date</a>
-                                                </h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-5.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-07.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Jobs</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">CDL A OTR Compnay Driver
-                                                        Job-N</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-6.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-05.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Vehicles</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">2022 Audi R8 GT Spyder
-                                                        Convertible</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-8.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-03.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Electronics</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">Apple iphone6 16GB 4G
-                                                        LTE</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="card">
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <a href="service-details.html">
-                                                <img src="assets/img/list/listgrid-7.jpg" class="img-fluid"
-                                                    alt="blog-img">
-                                            </a>
-                                            <div class="fav-item">
-                                                <span class="featured-text">Featured</span>
-                                                <a href="javascript:void(0)" class="fav-icon">
-                                                    <i class="feather-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="bloglist-content">
-                                            <div class="card-body">
-                                                <div class="blogfeaturelink">
-                                                    <div class="grid-author">
-                                                        <img src="assets/img/profiles/avatar-06.jpg"
-                                                            alt="author">
-                                                    </div>
-                                                    <div class="blog-features">
-                                                        <a href="javascript:void(0)"><span> <i
-                                                                    class="fa-regular fa-circle-stop"></i>
-                                                                Electronics</span></a>
-                                                    </div>
-                                                    <div class="blog-author text-end">
-                                                        <span> <i class="feather-eye"></i>4000 </span>
-                                                    </div>
-                                                </div>
-                                                <h6><a href="service-details.html">HP Gaming 15.6 Touchscreen
-                                                        12G</a></h6>
-                                                <div class="blog-location-details">
-                                                    <div class="location-info">
-                                                        <i class="feather-map-pin"></i> Los Angeles
-                                                    </div>
-                                                    <div class="location-info">
-                                                        <i class="fa-solid fa-calendar-days"></i> 06 Oct, 2022
-                                                    </div>
-                                                </div>
-                                                <div class="amount-details">
-                                                    <div class="amount">
-                                                        <span class="validrate">$350</span>
-                                                        <span>$450</span>
-                                                    </div>
-                                                    <div class="ratings">
-                                                        <span>4.7</span> (50)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
+
                         </div>
                     </div>
 
@@ -605,8 +249,8 @@
                         <nav>
                             <ul class="pagination">
                                 <li class="page-item previtem">
-                                    <a class="page-link" href="#"><i
-                                            class="fas fa-regular fa-arrow-left"></i> Prev</a>
+                                    <a class="page-link" href="#"><i class="fas fa-regular fa-arrow-left"></i>
+                                        Prev</a>
                                 </li>
                                 <li class="justify-content-center pagination-center">
                                     <div class="pagelink">

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/sweetalert2/sweetalert2.min.css') }}"
         type="text/css" />
         <link rel="stylesheet" href="{{ asset('admin/assets/plugins/datatables/datatables.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/plugins/fancybox/jquery.fancybox.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <style>

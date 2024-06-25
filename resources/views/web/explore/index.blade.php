@@ -47,7 +47,7 @@
                 <x-web.header-list-component />
             </div>
         </header>
-       
+
         <section class="gallery-section-five">
             <div class="container">
                 <div class="row">
@@ -67,7 +67,7 @@
                                     <p>The Pride of Arusha</p>
                                 </div>
                                 <div class="rating d-flex">
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                     <h5>Arusha National Park</h5>
                                 </div>
                                 <div class="rating d-flex">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                     <h5>The Pride of Arusha</h5>
                                 </div>
                                 <div class="rating d-flex">
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                     <h5>Oceania </h5>
                                 </div>
                                 <div class="rating d-flex">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                                     <h5>Africa / US </h5>
                                 </div>
                                 <div class="rating d-flex">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -124,8 +124,8 @@
             </div>
         </section>
 
-        
-      
+
+
 
 
         <div class="bloglisting">
@@ -177,7 +177,7 @@
                                             src="{{ asset('images/MERU2.jpeg') }}" alt="Post Image" /></a>
                                 </div>
                                 <div class="blog-content">
-                                    
+
                                     <ul class="entry-meta meta-item">
                                         <li>
                                             <div class="post-author">
@@ -213,7 +213,7 @@
                                             src="{{ asset('images/meru.jpeg') }}" alt="Post Image" /></a>
                                 </div>
                                 <div class="blog-content">
-                                    
+
                                     <ul class="entry-meta meta-item">
                                         <li>
                                             <div class="post-author">
@@ -298,7 +298,7 @@
                             <div class="card">
                                 <h4>
                                     <img src="assets/img/category-icon.svg" alt="details-icon" />
-                                    Visit Arusha 
+                                    Visit Arusha
                                 </h4>
                                 <ul class="blogcategories-list">
                                     <li>
@@ -370,7 +370,7 @@
         </section>
 
 
-        
+
 
 
         <footer class="footer-blk footer-three">
@@ -415,7 +415,7 @@
                                                             <a href="#">About Us</a>
                                                         </li>
                                                         <li>
-                                                            <a href="{{ route('web.listing.index') }}">Listing</a>
+                                                            <a href="{{ route('web.listings.index') }}">Listing</a>
                                                         </li>
 
                                                         <li><a href="#">Our Blog</a></li>

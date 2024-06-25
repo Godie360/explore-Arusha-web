@@ -23,7 +23,7 @@ class ServicesController extends Controller
     {
 
         if ($request->ajax()) {
-            $model = ServiceModel::query();
+            $model = ServiceModel::where('company_id', auth()->user()->company->id);
             return DataTables::of($model)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($data) {
@@ -92,6 +92,7 @@ class ServicesController extends Controller
             'description' => 'required|string',
             'featured_image_file' => 'nullable|file|image|max:2048',
         ]);
+
         DB::beginTransaction();
         if ($request->hasFile('featured_image_file')) {
             $request->merge([
@@ -110,7 +111,7 @@ class ServicesController extends Controller
                     'amenity_id' => $amenity,
                 ]);
             }
-            patchFile($service, ServiceAmenityModel::class, "id", false, "attachments");
+            patchFile($service, ServiceModel::class, "id", false, "attachments");
         }
         DB::commit();
         return redirect()->back()->with('success', 'Service Created successfully');
