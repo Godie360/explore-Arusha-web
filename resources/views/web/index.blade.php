@@ -131,7 +131,43 @@
           </div>
           </section>
 
+{{-- 
 
+
+          <section class="car-rental-slider-section aos" data-aos="fade-up">
+            <div class="car-rental-carousel">
+            <div class="car-rental-slider owl-carousel owl-theme">
+            <div class="car-rental-slider-item">
+            <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt>
+            <div class="container">
+            <div class="car-rental-carousel-content">
+            <h6>Limited Edition</h6>
+            <h3 class=" aos" data-aos="fade-up" data-aos-delay="200">2021 Jaguar XF facelift</h3>
+            <h5 class=" aos" data-aos="fade-up" data-aos-delay="300"><span>$400</span>/ Month</h5>
+            <p class=" aos" data-aos="fade-up" data-aos-delay="400">$0 First payment paid by jaquar up to $325.<br>taxes, title and fees extra</p>
+            <a href="contact.html">Test Drive</a>
+            </div>
+            </div>
+            </div>
+            <div class="car-rental-slider-item">
+            <img src="{{ asset('images/masaai.jpg') }}" class="img-fluid" alt>
+            <div class="container">
+            <div class="car-rental-carousel-content">
+            <h6>Limited Edition</h6>
+            <h3>2021 Audi RS7</h3>
+            <h5><span>$450</span>/ Month</h5>
+            <p>$0 First payment paid by jaquar up to $453.<br>taxes, title and fees extra</p>
+            <a href="signup.html">Test Drive</a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>   --}}
+
+
+
+         
       <section class="perfect-holiday-cabin-section">
         <div class="holiday-cabin-img-slider owl-carousel">
           <div class="item">
@@ -300,7 +336,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> 
 
 
 
