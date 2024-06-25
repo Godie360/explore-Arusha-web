@@ -25,46 +25,31 @@
                     verification page</p>
             </div>
             <div class="row">
-                <!-- Step 1: Verify Vendor -->
-                <div class="col-lg-3 col-md-6 d-flex">
+                <!-- Step 1: Input Details -->
+                <div class="col-lg-4 col-md-6 d-flex">
                     <div class="work-info card">
-                        <img src="assets/img/icons/verify-vendor.jpg" class="img-fluid" alt="Verify Vendor">
                         <h5>01</h5>
-                        <h6>Verify Vendor</h6>
-                        <p>Visit our verification page, select 'Vendor Verification', fill in the required details, and
-                            upload necessary documents. Submit the form for our team to review.</p>
+                        <h6>Input Details</h6>
+                        <p>Select category you want to verify and Enter system number to proceed.</p>
                     </div>
                 </div>
-                <!-- Step 2: Verify Staff -->
-                <div class="col-lg-3 col-md-6 d-flex">
+                <!-- Step 2: Verification in progress -->
+                <div class="col-lg-4 col-md-6 d-flex">
                     <div class="work-info card">
-                        <img src="assets/img/icons/verify-staff.jpg" class="img-fluid" alt="Verify Staff">
                         <h5>02</h5>
-                        <h6>Verify Staff</h6>
-                        <p>Go to the verification page, choose 'Staff Verification', complete the form with staff
-                            credentials, and upload identification documents. Submit for verification.</p>
+                        <h6>Verification in progress</h6>
+                        <p>The system will verify it from the database data.</p>
                     </div>
                 </div>
-                <!-- Step 3: Verify Hotel -->
-                <div class="col-lg-3 col-md-6 d-flex">
+                <!-- Step 3: Get Results -->
+                <div class="col-lg-4 col-md-6 d-flex">
                     <div class="work-info card">
-                        <img src="assets/img/icons/verify-hotel.jpg" class="img-fluid" alt="Verify Hotel">
                         <h5>03</h5>
-                        <h6>Verify Hotel</h6>
-                        <p>Navigate to our verification page, select 'Hotel Verification', enter the hotel’s details,
-                            and provide registration documents. Submit the information for our team to verify.</p>
+                        <h6>Get Results</h6>
+                        <p>Instantly get comprehensive details of the including name, status and validity</p>
                     </div>
                 </div>
-                <!-- Step 4: Other Activities -->
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <div class="work-info card">
-                        <img src="assets/img/icons/other-activities.jpg" class="img-fluid" alt="Other Activities">
-                        <h5>04</h5>
-                        <h6>Verify Other Activities</h6>
-                        <p>On the verification page, choose the appropriate category under 'Other Activities', fill in
-                            the required information, and submit any necessary documents for verification.</p>
-                    </div>
-                </div>
+
             </div>
 
         </div>
