@@ -96,7 +96,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+            transition: background-color 0.3s, color 0.3s; 
         }
         .btn:hover {
             background-color: #64bd4f;

@@ -10160,7 +10160,7 @@ a:focus {
     line-height: 0;
 }
 .city-section {
-    background: url(../img/bg/cate-bg.png), #f5f8fd;
+    /* background: url(../img/bg/cate-bg.png), #f5f8fd; */
     background-size: cover;
 }
 .city-section .city-sec {
@@ -16258,7 +16258,7 @@ section.home-six-trending-search {
     color: #64bd4f;
 }
 .buy-property .buy-property-content {
-    background: url(../img/bg/join-us.jpg);
+    background: url("/images/meru.jpeg");
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: cover;
