@@ -4532,7 +4532,7 @@ html.menu-opened body {
     }
 }
 .breadcrumb-bar {
-    background: #384b5c;
+    background: #64bd4f;
     padding: 105px 0 20px;
     position: relative;
     z-index: 1;
@@ -5805,7 +5805,7 @@ a:focus {
     border-radius: 10px;
 }
 .pricingplan-section {
-    background: url(../img/Rosebg.png);
+    background: url(/images/green.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px 0 76px;
@@ -7760,7 +7760,7 @@ a:focus {
 }
 .blog-section-two {
     padding: 70px 0;
-    background: url(../img/bg/venue-bg.png) no-repeat;
+    /* background: url(../img/bg/venue-bg.png) no-repeat; */
     background-position: right center;
     background-size: contain;
 }
@@ -16318,7 +16318,7 @@ section.home-six-trending-search {
 .buy-property .buy-property-content a {
     display: inline-block;
     background-color: #64bd4f;
-    border-radius: 5px;
+    border-radius: 5px; 
     padding: 18px 74px;
     border: 1px solid transparent;
     color: #fff;

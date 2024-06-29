@@ -28,7 +28,9 @@
         </header>
         <section class="banner-section banner-three"
             style="background-image: url({{ asset('images/Arusha_City_view.jpg') }})">
+            
             <div class="container">
+                
                 <div class="row">
                     <div class="banner-info-blk">
                         <div class="row">
@@ -280,11 +282,12 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 aos" data-aos="fade-up">
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/meru.jpeg') }}" class="img-fluid" alt="img">
+                            <a href="{{route('web.nationalpark')}}"><img src="{{ asset('images/meru.jpeg') }}" class="img-fluid" alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Arusha National Park</h5>
+                                    <a href="{{route('web.nationalpark')}}"><h5>Arusha National Park</h5></a>
                                     <p>Tourism Attraction</p>
+
                                 </div>
                                 <div class="rating d-flex">
                                     <i class="fas fa-star filled"></i>
@@ -298,12 +301,12 @@
                     </div>
                     <div class="col-md-3 col-sm-6 aos" data-aos="fade-up">
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid"
-                                alt="img">
+                            <a href="{{route('web.cultureheritage')}}"><img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt="img"></a>
+
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Arusha Cultural Heritage</h5>
-                                    <p>Tourism Attraction</p>
+                                    <a href="{{route('web.cultureheritage')}}"><h5>Arusha Cultural Heritage</h5></a>
+                                    <p>The Pride Of Arusha</p>
                                 </div>
                                 <div class="rating d-flex">
                                     <i class="fas fa-star filled"></i>
@@ -315,10 +318,10 @@
                             </div>
                         </div>
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/olduvai gorge.jpg') }}" class="img-fluid" alt="img">
+                            <a href="{{route('web.oldvai')}}"><img src="{{ asset('images/olduvai gorge.jpg') }}" class="img-fluid" alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Oldvai Gorge</h5>
+                                    <a href="{{route('web.oldvai')}}"><h5>Oldvai Gorge</h5></a>
                                 </div>
                                 <div class="rating d-flex">
                                     <i class="fas fa-star filled"></i>
@@ -330,11 +333,11 @@
                             </div>
                         </div>
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/shanga-arusha-coffee-lodge.jpg.webp') }}" class="img-fluid"
-                                alt="img">
+                            <a href="{{route('web.shanga')}}"><img src="{{ asset('images/shanga-arusha-coffee-lodge.jpg.webp') }}" class="img-fluid"
+                                alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>SHANGA</h5>
+                                   <a href="{{route('web.shanga')}}"><h5>SHANGA</h5></a>
                                     <p>The Home Of Beads</p>
                                 </div>
                                 <div class="rating d-flex">
@@ -349,10 +352,10 @@
                     </div>
                     <div class="col-md-3 col-sm-6 aos" data-aos="fade-up">
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/lake duluti.jpg') }}" class="img-fluid" alt="img">
+                            <a href="{{route('web.duluti')}}"><img src="{{ asset('images/lake duluti.jpg') }}" class="img-fluid" alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Lake Duluti</h5>
+                                    <a href="{{route('web.duluti')}}"><h5>Lake Duluti</h5></a>
                                 </div>
                                 <div class="rating d-flex">
                                     <i class="fas fa-star filled"></i>
@@ -364,10 +367,10 @@
                             </div>
                         </div>
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/oldonyo.jpg') }}" class="img-fluid" alt="img">
+                            <a href="{{route('web.oldonyo')}}"><img src="{{ asset('images/oldonyo.jpg') }}" class="img-fluid" alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Oldonyo Lengai</h5>
+                                    <a href="{{route('web.oldonyo')}}"><h5>Oldonyo Lengai</h5></a>
                                     <p></p>
                                 </div>
                                 <div class="rating d-flex">
@@ -380,10 +383,10 @@
                             </div>
                         </div>
                         <div class="gal-wrap">
-                            <img src="{{ asset('images/Arusha_City_view.jpg') }}" class="img-fluid" alt="img">
+                            <a href="{{route('web.arushacity')}}"><img src="{{ asset('images/Arusha_City_view.jpg') }}" class="img-fluid" alt="img"></a>
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Arusha Town</h5>
+                                    <a href="{{route('web.arushacity')}}"><h5>Arusha Town</h5></a>
                                 </div>
                                 <div class="rating d-flex">
                                     <i class="fas fa-star filled"></i>
@@ -405,7 +408,7 @@
                 <div class="section-heading-two text-center">
                     <div class="row">
                         <div class="col-md-12 aos" data-aos="fade-up">
-                            <h2>Visit Amaizing Place in Arusha</h2>
+                            <h2>Visit Amazing Place in Arusha</h2>
 
                             <div class="contactus-info">
                                 <div class="container">
@@ -428,7 +431,7 @@
                                     </div>
                                 </div>
                             </div>
-        </section>
+                   </section>
 
 
         <section class="city-section">
@@ -539,119 +542,91 @@
 
           
 
-        <section class="property-articles">
+          <section class="blog-section-two">
             <div class="container">
-                <div class="section-heading section-heading-nine aos" data-aos="fade-up">
-                    <div class="row align-items-center">
-                        <div class="col-md-9 aos aos-init aos-animate" data-aos="fade-up">
-                            <h2>Recent Blogs</h2>
-                            <p>The most trendy accommodations available</p>
-                        </div>
-                        <div class="col-md-3 text-md-end aos aos-init aos-animate" data-aos="fade-up">
-                            <a href="categories.html" class="btn btn-view">View all Blog</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-lg-12 aos" data-aos="fade-up">
-                        <div class="car-class-carousel">
-                            <div class="owl-carousel blog-slider">
-                                <div class="blog grid-blog blog-two aos" data-aos="fade-up">
-                                    <div class="blog-image">
-                                        <a href="blog-details.html"><img class="img-fluid"
-                                                src="assets/img/blog/property-blog-1.jpg" alt="Post Image" /></a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="blog-title">
-                                            <a href="blog-details.html">Skills That You Can Learn In The Real Estate
-                                                Market</a>
-                                        </h3>
-                                        <ul class="entry-meta meta-item">
-                                            <li class="date-icon">
-                                                <i class="feather-calendar"></i> 7 Jan 2023
-                                            </li>
-                                        </ul>
-                                        <p class="blog-description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the
-                                            industry's standard dummy text.
-                                        </p>
-                                        <div class="viewlink">
-                                            <a href="blog-details.html">Read More</a>
-                                        </div>
+                    <div class="col-lg-12">
+                        <div class="section-heading-two text-center">
+                            <h2>Latest News</h2>
+                        </div>
+                        <div class="owl-carousel blog-slider">
+                            <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                                <div class="blog-image">
+                                    <a href="blog-details.html"><img class="img-fluid" src="{{ asset('images/tanzanite.jpg') }}"
+                                            alt="Post Image"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h3 class="blog-title"><a href="blog-details.html">Wedding Tips For Fashion</a></h3>
+                                    <ul class="entry-meta meta-item">
+                                        <li class="date-icon"><i class="feather-calendar"></i> 7 Jan 2023</li>
+                                        <li class="blog-cat">Wedding</li>
+                                    </ul>
+                                    <p class="blog-description">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                                    </p>
+                                    <div class="viewlink">
+                                        <a href="blog-details.html">View More <i
+                                                class="feather-arrow-right-circle"></i></a>
                                     </div>
                                 </div>
-                                <div class="blog grid-blog blog-two aos" data-aos="fade-up">
-                                    <div class="blog-image">
-                                        <a href="blog-details.html"><img class="img-fluid"
-                                                src="assets/img/blog/property-blog-2.jpg" alt="Post Image" /></a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="blog-title">
-                                            <a href="blog-details.html">5 Essential Steps for Buying an Investment</a>
-                                        </h3>
-                                        <ul class="entry-meta meta-item">
-                                            <li class="date-icon">
-                                                <i class="feather-calendar"></i> 15 Jan 2023
-                                            </li>
-                                        </ul>
-                                        <p class="blog-description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the
-                                            industry's standard dummy text.
-                                        </p>
-                                        <div class="viewlink">
-                                            <a href="blog-details.html">Read More</a>
-                                        </div>
+                            </div>
+                            <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                                <div class="blog-image">
+                                    <a href="blog-details.html"><img class="img-fluid" src="{{ asset('images/snake-arusha.webp') }}"
+                                            alt="Post Image"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h3 class="blog-title"><a href="blog-details.html">Pre-Wedding Photoshoot</a></h3>
+                                    <ul class="entry-meta meta-item">
+                                        <li class="date-icon"><i class="feather-calendar"></i> 15 Jan 2023</li>
+                                        <li class="blog-cat">Photography</li>
+                                    </ul>
+                                    <p class="blog-description">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                                    </p>
+                                    <div class="viewlink">
+                                        <a href="blog-details.html">View More <i
+                                                class="feather-arrow-right-circle"></i></a>
                                     </div>
                                 </div>
-                                <div class="blog grid-blog blog-two aos" data-aos="fade-up">
-                                    <div class="blog-image">
-                                        <a href="blog-details.html"><img class="img-fluid"
-                                                src="assets/img/blog/property-blog-3.jpg" alt="Post Image" /></a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="blog-title">
-                                            <a href="blog-details.html">Bedroom Colors You’ll Never Regret</a>
-                                        </h3>
-                                        <ul class="entry-meta meta-item">
-                                            <li class="date-icon">
-                                                <i class="feather-calendar"></i> 27 Feb 2023
-                                            </li>
-                                        </ul>
-                                        <p class="blog-description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the
-                                            industry's standard dummy text.
-                                        </p>
-                                        <div class="viewlink">
-                                            <a href="blog-details.html">Read More</a>
-                                        </div>
+                            </div>
+                            <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                                <div class="blog-image">
+                                    <a href="blog-details.html"><img class="img-fluid" src="{{ asset('images/Arusha_City_view.jpg') }}"
+                                            alt="Post Image"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h3 class="blog-title"><a href="blog-details.html">Special Food wedding</a></h3>
+                                    <ul class="entry-meta meta-item">
+                                        <li class="date-icon"><i class="feather-calendar"></i> 27 Feb 2023</li>
+                                        <li class="blog-cat">Catering</li>
+                                    </ul>
+                                    <p class="blog-description">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                                    </p>
+                                    <div class="viewlink">
+                                        <a href="blog-details.html">View More <i
+                                                class="feather-arrow-right-circle"></i></a>
                                     </div>
                                 </div>
-                                <div class="blog grid-blog blog-two aos" data-aos="fade-up">
-                                    <div class="blog-image">
-                                        <a href="blog-details.html"><img class="img-fluid"
-                                                src="assets/img/blog/property-blog-1.jpg" alt="Post Image" /></a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="blog-title">
-                                            <a href="blog-details.html">Skills That You Can Learn In The Real Estate
-                                                Market</a>
-                                        </h3>
-                                        <ul class="entry-meta meta-item">
-                                            <li class="date-icon">
-                                                <i class="feather-calendar"></i> 28 Mar 2023
-                                            </li>
-                                        </ul>
-                                        <p class="blog-description">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the
-                                            industry's standard dummy text.
-                                        </p>
-                                        <div class="viewlink">
-                                            <a href="blog-details.html">Read More</a>
-                                        </div>
+                            </div>
+                            <div class="blog grid-blog blog-two aos" data-aos="fade-up">
+                                <div class="blog-image">
+                                    <a href="blog-details.html"><img class="img-fluid" src="{{ asset('images/Arusha_City_view.jpg') }}"
+                                            alt="Post Image"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h3 class="blog-title"><a href="blog-details.html">Pre-Wedding Photoshoot</a></h3>
+                                    <ul class="entry-meta meta-item">
+                                        <li class="date-icon"><i class="feather-calendar"></i> 28 Mar 2023</li>
+                                        <li class="blog-cat">Photography</li>
+                                    </ul>
+                                    <p class="blog-description">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+                                    </p>
+                                    <div class="viewlink">
+                                        <a href="blog-details.html">View More <i
+                                                class="feather-arrow-right-circle"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -661,6 +636,26 @@
             </div>
         </section>
 
+
+        <div class="partners-section">
+            <div class="container">
+            <p class="partners-heading">Our Partners</p>
+            <ul class="owl-carousel partnerslist d-flex">
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/tigo.png') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
+            </ul>
+            </div>
+            </div>
 
       
 

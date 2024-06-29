@@ -38,6 +38,16 @@ Route::group(['as' => 'web.'], function () {
     Route::post('/complaints', [WebController::class, 'complaints_store'])->name('complaints.store');
     Route::get('/fetch_districts', [WebController::class, 'fetch_districts'])->name('fetch_districts');
     Route::get('/fetch_subcategories', [WebController::class, 'fetch_subcategories'])->name('fetch_subcategories');
+    Route::get('/nationalpark', [WebController::class, 'nationalpark'])->name('nationalpark');
+    Route::get('/oldonyo', [WebController::class, 'oldonyo'])->name('oldonyo');
+    Route::get('/shanga', [WebController::class, 'shanga'])->name('shanga');
+    Route::get('/cultureheritage', [WebController::class, 'cultureheritage'])->name('cultureheritage');
+    Route::get('/oldvai', [WebController::class, 'oldvai'])->name('oldvai');
+    Route::get('/arushacity', [WebController::class, 'arushacity'])->name('arushacity');
+    Route::get('/lakeduluti', [WebController::class, 'duluti'])->name('duluti');
+
+
+
     Route::resource('news', NewsController::class);
     Route::post('/listings/{listing}/review', [ListController::class, 'review'])->name('listings.review');
     Route::resource('listings', ListController::class);

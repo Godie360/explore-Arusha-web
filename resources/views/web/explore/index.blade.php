@@ -27,16 +27,54 @@
                     <div class="section-search aos" data-aos="fade-up">
                         <h1>EXPLORE ARUSHA CITY</h1>
                         <p>The Geneva of Africa</p>
+                        <div class="search-box">
+                            <form action="{{route('web.listings.index')}}"
+                                class="form-block d-flex">
+                                <div class="search-input line">
+                                    <div class="form-set mb-0">
+                                        <select class="form-control select category-select">
+                                            <option value>Choose Category</option>
+                                            <option>Safaris</option>
+                                            <option>Museums</option>
+                                            <option>Nature</option>
+                                            <option>Wildlife</option>
+                                            <option>Walking Tour</option>
+                                            <option>Luxury Hote & Apartments</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search-input">
+                                    <div class="form-set mb-0">
+                                        <div class="group-img">
+                                            <select class="form-control select loc-select">
+                                                <option value>Choose Location</option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                            <i class="feather-map-pin"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-btn">
+                                    <button class="btn btn-primary" type="submit"><i class="fa fa-search m-0"
+                                            aria-hidden="true"></i></button>
                                 </div>
                             </form>
                         </div>
+                        
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
 </section>
-
 
 
 <body class="body-three">
@@ -125,6 +163,169 @@
         </section>
 
 
+        <section class="gallery-section-five">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-heading heading-five aos" data-aos="fade-up">
+                            <h2>Arusha Gallery</h2>
+                        </div>
+                    </div>
+                </div>
+            
+             
+                <div class="gallerypage-info listing-section ">
+                    <div class="container">
+                        <div class="gallery-content">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/MERU2.jpeg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="gallery-widget me-0">
+                                        <a href="{{ asset('images/girrafe.jpg') }}" data-fancybox="gallery2">
+                                            <img class="img-fluid" alt="Image"
+                                                src="{{ asset('images/girrafe.jpg') }}">
+                                        </a>
+                                    </div>
+                                </div>
+                
+                                <div class="blog-pagination">
+                                    <nav>
+                                        <ul class="pagination">
+                                            <li class="page-item previtem">
+                                                <a class="page-link" href="#"><i class="fas fa-regular fa-arrow-left"></i>
+                                                    Prev</a>
+                                            </li>
+                                            <li class="justify-content-center pagination-center">
+                                                <div class="pagelink">
+                                                    <ul>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">1</a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a class="page-link" href="#">2 <span
+                                                                    class="visually-hidden">(current)</span></a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">...</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">14</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="page-item nextlink">
+                                                <a class="page-link" href="#">Next <i
+                                                        class="fas fa-regular fa-arrow-right"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </section>        
+
+
+       
+
+
+
 
 
 
@@ -167,7 +368,8 @@
                                         expect
                                     </p>
                                     <div class="viewlink">
-                                        <a href="blog-details.html">View Details <i class="feather-arrow-right"></i></a>
+                                        <a href="blog-details.html">View Details <i
+                                                class="feather-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +405,8 @@
                                         Richard
                                     </p>
                                     <div class="viewlink">
-                                        <a href="{{ route('web.explore.explore-details') }}">View Details <i class="feather-arrow-right"></i></a>
+                                        <a href="{{ route('web.explore.explore-details') }}">View Details <i
+                                                class="feather-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +433,8 @@
                                         </li>
                                     </ul>
                                     <h3 class="blog-title">
-                                        <a href="{{ route('web.explore.explore-details') }}">8 Amazing Tricks About Business</a>
+                                        <a href="{{ route('web.explore.explore-details') }}">8 Amazing Tricks About
+                                            Business</a>
                                     </h3>
                                     <p class="mb-0">
                                         Contrary to popular belief, Lorem Ipsum is not simply
@@ -321,7 +525,8 @@
                                     </div>
                                     <div class="article-content">
                                         <h5>
-                                            <a href="{{ route('web.explore.explore-details') }}">Great Business Tips in 2022</a>
+                                            <a href="{{ route('web.explore.explore-details') }}">Great Business Tips
+                                                in 2022</a>
                                         </h5>
                                         <div class="article-date">
                                             <i class="fa-solid fa-calendar-days"></i>
@@ -337,7 +542,8 @@
                                     </div>
                                     <div class="article-content">
                                         <h5>
-                                            <a href="{{ route('web.explore.explore-details') }}">Excited News About Fashion.</a>
+                                            <a href="{{ route('web.explore.explore-details') }}">Excited News About
+                                                Fashion.</a>
                                         </h5>
                                         <div class="article-date">
                                             <i class="fa-solid fa-calendar-days"></i>
@@ -353,7 +559,8 @@
                                     </div>
                                     <div class="article-content">
                                         <h5>
-                                            <a href="{{ route('web.explore.explore-details') }}">8 Amazing Tricks About Business</a>
+                                            <a href="{{ route('web.explore.explore-details') }}">8 Amazing Tricks
+                                                About Business</a>
                                         </h5>
                                         <div class="article-date">
                                             <i class="fa-solid fa-calendar-days"></i>

@@ -120,4 +120,50 @@ class WebController extends Controller
             return response()->json(['message' => 'Unknown error occur', 'data' => null], Response::HTTP_BAD_REQUEST);
         }
     }
+
+
+    public function nationalPark()
+    {
+        return view('web.nationalpark');
+    }
+
+
+    public function arushacity()
+    {
+        return view('web.arushacity');
+    }
+
+
+    public function cultureheritage()
+    {
+        return view('web.cultureheritage');
+    }
+
+
+    public function oldonyo()
+    {
+        return view('web.oldonyo');
+    }
+
+
+    public function oldvai()
+    {
+        return view('web.oldvai');
+    }
+
+
+    public function shanga()
+    {
+        return view('web.shanga');
+    }
+
+    public function duluti()
+    {
+        return view('web.lakedulluti');
+    }
+
+
+
+
+
 }
