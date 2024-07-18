@@ -174,7 +174,7 @@
         <section class="perfect-holiday-cabin-section">
             <div class="holiday-cabin-img-slider owl-carousel">
                 <div class="item">
-                    <img src="assets/img/bg/holiday-cabin-slider-img-1.jpg" class="img-fluid" alt />
+                    <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
                     <div class="container">
                         <div class="holiday-cabin-info" data-aos="fade-up">
                             <div class="rate-per-day">
@@ -182,7 +182,7 @@
                                 <h6>Per night</h6>
                             </div>
                             <div class="section-heading">
-                                <h2>Perfect Holiday Cabin</h2>
+                                <h2>The Geneva of Africa</h2>
                                 <p>
                                     Spectacular Condo In Summerlin! View of Spring Mountains and
                                     Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
@@ -191,26 +191,40 @@
                                     Location!
                                 </p>
                             </div>
-                            <div class="room-categories">
-                                <span><img src="assets/img/icons/area-icon.svg" class="img-fluid"
-                                        alt />Area:56000/m2</span>
-                                <span><img src="assets/img/icons/bed-icon.svg" class="img-fluid" alt />Beds:3</span>
-                                <span><img src="assets/img/icons/floor-icon.svg" class="img-fluid"
-                                        alt />Floors:4</span>
-                                <span><img src="assets/img/icons/guest-icon.svg" class="img-fluid"
-                                        alt />Guest:4</span>
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img src="assets/img/bg/holiday-cabin-slider-img-2.jpg" class="img-fluid" alt />
+                    <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
                     <div class="container">
                         <div class="holiday-cabin-info">
                             <div class="rate-per-day">
                                 <span>$64</span>
-                                <h6>Per night</h6>
+                              <h6>Per night</h6>
                             </div>
+                            <div class="section-heading">
+                                <h2>The Geneva of Africa</h2>
+                                <p>
+                                    Spectacular Condo In Summerlin! View of Spring Mountains and
+                                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
+                                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
+                                    Microwave , Open And Spacious Floorplan! Great Summerlin
+                                    Location!
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
+                    <div class="container">
+                        <div class="holiday-cabin-info">
+                            <dclass="rate-per-day">
+                                <span>$64</span>
+                                <h6>Per night</h6>
+                            </dclass=>
                             <div class="section-heading">
                                 <h2>Perfect Holiday Cabin</h2>
                                 <p>
@@ -221,45 +235,7 @@
                                     Location!
                                 </p>
                             </div>
-                            <div class="room-categories">
-                                <span><img src="assets/img/icons/area-icon.svg" class="img-fluid"
-                                        alt />Area:56000/m2</span>
-                                <span><img src="assets/img/icons/bed-icon.svg" class="img-fluid" alt />Beds:3</span>
-                                <span><img src="assets/img/icons/floor-icon.svg" class="img-fluid"
-                                        alt />Floors:4</span>
-                                <span><img src="assets/img/icons/guest-icon.svg" class="img-fluid"
-                                        alt />Guest:4</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="assets/img/bg/holiday-cabin-slider-img-1.jpg" class="img-fluid" alt />
-                    <div class="container">
-                        <div class="holiday-cabin-info">
-                            <div class="rate-per-day">
-                                <span>$64</span>
-                                <h6>Per night</h6>
-                            </div>
-                            <div class="section-heading">
-                                <h2>Perfect Holiday Cabin</h2>
-                                <p>
-                                    Spectacular Condo In Summerlin! View of Spring Mountains and
-                                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
-                                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
-                                    Microwave , Open And Spacious Floorplan! Great Summerlin
-                                    Location!
-                                </p>
-                            </div>
-                            <div class="room-categories">
-                                <span><img src="assets/img/icons/area-icon.svg" class="img-fluid"
-                                        alt />Area:56000/m2</span>
-                                <span><img src="assets/img/icons/bed-icon.svg" class="img-fluid" alt />Beds:3</span>
-                                <span><img src="assets/img/icons/floor-icon.svg" class="img-fluid"
-                                        alt />Floors:4</span>
-                                <span><img src="assets/img/icons/guest-icon.svg" class="img-fluid"
-                                        alt />Guest:4</span>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -508,7 +484,7 @@
                         <div class="col-lg-2 col-sm-6 aos" data-aos="fade-up">
                             <div class="city-wrap">
                                 <div class="city-img">
-                                    <img src="{{ asset('images/Wadudu2.jpeg') }}" class="img-fluid" alt="blog-img">
+                                    <img src="{{ asset('images/wadudu2.jpeg') }}" class="img-fluid" alt="blog-img">
                                 </div>
                                 <div class="city-content">
                                     <h5><a>Wadudu</a></h5>
@@ -541,6 +517,97 @@
           <section class="buy-property aos" data-aos="fade-up"> </section>
 
           
+        <section class="car-clients">
+        <div class="container">
+          <div class="row aos" data-aos="fade-up">
+            <div class="col-lg-12">
+              <div class="home-six-heading-section">
+                <div class="home-six-title d-flex justify-content-center align-items-center">
+                  <h2>What People Say About Arusha</h2>
+                </div>
+                <p>Arusha is often described as a vibrant city with beautiful landscapes, rich cultural heritage, and a dynamic atmosphere</p>
+              </div>
+            </div>
+          </div>
+          <div class="car-class-carousel aos" data-aos="fade-up" data-aos-delay="200">
+            <div class="client-testimonial-slider owl-carousel owl-theme">
+              <div class="car-client-item">
+                <div class="car-client-review">
+                  <img src="{{ asset('images/makonda.webp') }}" alt />
+                  <h3>Paul Makonda </h3>
+                  <h5>Arusha Regional Commisioner</h5>
+                  <p class="m-0">Arusha, located in northern Tanzania, is celebrated as the gateway to some of Africa's most iconic natural wonders, including the Serengeti National Park and the Ngorongoro Conservation Area. This strategic positioning makes it a magnet for tourists eager to embark on safari adventures or witness the annual wildebeest migration.</p>
+                  <div class="car-client-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="car-client-user">
+                <img src="{{ asset('images/makonda.webp') }}" alt />
+                </div>
+              </div>
+              <div class="car-client-item">
+                <div class="car-client-review">
+                  <img src="assets/img/Polygon.svg" alt />
+                  <h3>Saad Karwani</h3>
+                  <h5>Visitor</h5>
+                  <p class="m-0">Arusha, located in northern Tanzania, is celebrated as the gateway to some of Africa's most iconic natural wonders, including the Serengeti National Park and the Ngorongoro Conservation Area. This strategic positioning makes it a magnet for tourists eager to embark on safari adventures or witness the annual wildebeest migration.</p>
+                  <div class="car-client-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="car-client-user">
+                  <img src="{{ asset('images/saad.jpeg') }}" alt />
+                </div>
+              </div>
+              <div class="car-client-item">
+                <div class="car-client-review">
+                  <h3>Cecil Mhina</h3>
+                  <h5>Visitor</h5>
+                  <p class="m-0">Arusha, located in northern Tanzania, is celebrated as the gateway to some of Africa's most iconic natural wonders, including the Serengeti National Park and the Ngorongoro Conservation Area. This strategic positioning makes it a magnet for tourists eager to embark on safari adventures or witness the annual wildebeest migration.</p>
+                  <div class="car-client-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="car-client-user">
+                  <img src="{{ asset('images/cecil.jpeg') }}" alt />
+                </div>
+              </div>
+              <div class="car-client-item">
+                <div class="car-client-review">
+                  <img src="assets/img/Polygon.svg" alt />
+                  <h3>Daniela Fransis</h3>
+                  <h5>Customer</h5>
+                  <p class="m-0">Arusha, located in northern Tanzania, is celebrated as the gateway to some of Africa's most iconic natural wonders, including the Serengeti National Park and the Ngorongoro Conservation Area. This strategic positioning makes it a magnet for tourists eager to embark on safari adventures or witness the annual wildebeest migration.</p>
+                  <div class="car-client-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <div class="car-client-user">
+                  <img src="assets/img/profiles/avatar-12.jpg" alt />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
           <section class="blog-section-two">
             <div class="container">

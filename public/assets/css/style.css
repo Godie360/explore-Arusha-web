@@ -589,6 +589,8 @@ h2 {
     font-weight: 600;
     color: #0d233e;
     font-size: 32px;
+    position:relative;
+    top: 16px;
 }
 @media (max-width: 991.98px) {
     h2 {
@@ -619,6 +621,8 @@ h4 {
     font-weight: 600;
     color: #0d233e;
     font-size: 24px;
+    position: relative;
+    top: 13px;
 }
 @media (max-width: 767.98px) {
     h4 {
@@ -4582,6 +4586,8 @@ html.menu-opened body {
     font-size: 36px;
     font-weight: 700;
     color: #fff;
+    position: relative;
+    top: -3px;
 }
 @media (max-width: 991.98px) {
     .breadcrumb-bar .breadcrumb-title {
@@ -7917,6 +7923,8 @@ a:focus {
     line-height: 80px;
     font-weight: 900;
     margin: 0 0 10px;
+    position: relative;
+    top: 2rem;
 }
 @media (max-width: 991.98px) {
     .banner-three .banner-info-blk .banner-content-blk h1 {
@@ -7935,6 +7943,8 @@ a:focus {
     font-weight: 600;
     font-size: 30px;
     letter-spacing: 10px;
+    position: relative;
+    top:2rem;
 }
 .banner-three .banner-images .ban-image {
     position: absolute;
@@ -11344,6 +11354,8 @@ a:focus {
     font-size: 33px;
     color: #000;
     margin: 0 10px 0 0;
+    position: relative;
+    top: 30px;
 }
 @media (max-width: 991.98px) {
     .home-six-heading-section h2 {
@@ -11357,6 +11369,8 @@ a:focus {
     font-size: 16px;
     max-width: 339px;
     color: #666;
+    position:relative;
+    top:40px;
 }
 .car-brand-slider.owl-carousel .owl-stage-outer,
 .car-class-slider.owl-carousel .owl-stage-outer {
@@ -17277,6 +17291,8 @@ section.home-six-trending-search {
 .innerbanner .breadcrumb-title {
     font-weight: 600;
     color: #fff;
+    position: relative;
+    top: -4px;
 }
 .innerbanner .breadcrumb {
     margin: 0;

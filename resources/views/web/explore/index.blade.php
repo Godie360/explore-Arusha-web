@@ -85,7 +85,7 @@
                 <x-web.header-list-component />
             </div>
         </header>
-
+<!-- 
         <section class="gallery-section-five">
             <div class="container">
                 <div class="row">
@@ -139,7 +139,7 @@
                             <img src="{{ asset('images/Arusha_City_view.jpg') }}" class="img-fluid" alt="img">
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Oceania </h5>
+                                    <h5>Arusha City</h5>
                                 </div>
                                 <div class="rating d-flex">
 
@@ -150,7 +150,7 @@
                             <img src="{{ asset('images/Arusha_City_view.jpg') }}" class="img-fluid" alt="img">
                             <div class="city-overlay city-five-overlay">
                                 <div class="city-name">
-                                    <h5>Africa / US </h5>
+                                    <h5>Arusha Town</h5>
                                 </div>
                                 <div class="rating d-flex">
 
@@ -160,7 +160,96 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <section class="work-section listing-section">
+        <div class="container">
+          <div class="work-heading">
+            <h4>Things To Do in Arusha </h4>
+            <p class="description">Add your business to Listee, so customers can easily find</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <h5>01</h5>
+                <h6>Arusha National Park</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <h5 class="mt-0">02</h5>
+                <h6>Cultural Heritage Centre</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <h5>03</h5>
+                <h6>Mount Meru</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <h5>04</h5>
+                <h6>Hot Air Balloon Safaris</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <h5 class="mt-0">07</h5>
+                <h6>Maasai Market</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <h5>06</h5>
+                <h6>Coffee Plantation Tours</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <h5>08</h5>
+                <h6>Hot Air Balloon Safaris</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <h5 class="mt-0">09</h5>
+                <h6>Maasai Market</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 d-flex">
+              <div class="work-info card">
+                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <h5>10</h5>
+                <h6>Coffee Plantation Tours</h6>
+                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
 
 
         <section class="gallery-section-five">
@@ -172,8 +261,7 @@
                         </div>
                     </div>
                 </div>
-            
-             
+                         
                 <div class="gallerypage-info listing-section ">
                     <div class="container">
                         <div class="gallery-content">
