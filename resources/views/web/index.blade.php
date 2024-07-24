@@ -177,18 +177,20 @@
                     <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
                     <div class="container">
                         <div class="holiday-cabin-info" data-aos="fade-up">
-                            <div class="rate-per-day">
-                                <span>$64 /</span>
-                                <h6>Per night</h6>
-                            </div>
+                            
                             <div class="section-heading">
                                 <h2>The Geneva of Africa</h2>
                                 <p>
-                                    Spectacular Condo In Summerlin! View of Spring Mountains and
-                                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
-                                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
-                                    Microwave , Open And Spacious Floorplan! Great Summerlin
-                                    Location!
+                                Arusha is often called the "Geneva of Africa" due to its pivotal 
+                                role in international diplomacy and peacekeeping. 
+                                The city gained prominence by hosting the Arusha 
+                                Declaration in 1967 and later becoming the headquarters
+                                 for the International Criminal Tribunal for Rwanda, 
+                                 established to prosecute those responsible for the Rwandan Genocide.
+                                  Arusha's ongoing role as a venue for peace negotiations 
+                                  and as the headquarters of the East African Community further solidifies its status
+                                   as a center for justice, reconciliation, and
+                                regional cooperation, much like Geneva in Switzerland.
                                 </p>
                             </div>
 
@@ -199,18 +201,20 @@
                     <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
                     <div class="container">
                         <div class="holiday-cabin-info">
-                            <div class="rate-per-day">
-                                <span>$64</span>
-                              <h6>Per night</h6>
-                            </div>
+                            
                             <div class="section-heading">
                                 <h2>The Geneva of Africa</h2>
                                 <p>
-                                    Spectacular Condo In Summerlin! View of Spring Mountains and
-                                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
-                                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
-                                    Microwave , Open And Spacious Floorplan! Great Summerlin
-                                    Location!
+                                Arusha is often called the "Geneva of Africa" due to its pivotal 
+                                role in international diplomacy and peacekeeping. 
+                                The city gained prominence by hosting the Arusha 
+                                Declaration in 1967 and later becoming the headquarters
+                                 for the International Criminal Tribunal for Rwanda, 
+                                 established to prosecute those responsible for the Rwandan Genocide.
+                                  Arusha's ongoing role as a venue for peace negotiations 
+                                  and as the headquarters of the East African Community further solidifies its status
+                                   as a center for justice, reconciliation, and
+                                regional cooperation, much like Geneva in Switzerland.
                                 </p>
                             </div>
                             
@@ -218,21 +222,23 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt />
+                    <a href=""><img src="{{ asset('images/girrafe (2).jpg') }}" class="img-fluid" alt /></a>
                     <div class="container">
                         <div class="holiday-cabin-info">
-                            <dclass="rate-per-day">
-                                <span>$64</span>
-                                <h6>Per night</h6>
-                            </dclass=>
+
                             <div class="section-heading">
                                 <h2>Perfect Holiday Cabin</h2>
                                 <p>
-                                    Spectacular Condo In Summerlin! View of Spring Mountains and
-                                    Charleston Peak!!! 1 Bedrooms, Private Bathroom and a Queen
-                                    Size Vertical Wall Bed. Fireplace, Kitchen, Dishwasher and
-                                    Microwave , Open And Spacious Floorplan! Great Summerlin
-                                    Location!
+                                Arusha is often called the "Geneva of Africa" due to its pivotal 
+                                role in international diplomacy and peacekeeping. 
+                                The city gained prominence by hosting the Arusha 
+                                Declaration in 1967 and later becoming the headquarters
+                                for the International Criminal Tribunal for Rwanda, 
+                                established to prosecute those responsible for the Rwandan Genocide.
+                                Arusha's ongoing role as a venue for peace negotiations 
+                                and as the headquarters of the East African Community further solidifies its status
+                                as a center for justice, reconciliation, and
+                                regional cooperation, much like Geneva in Switzerland.
                                 </p>
                             </div>
 
@@ -708,18 +714,18 @@
             <div class="container">
             <p class="partners-heading">Our Partners</p>
             <ul class="owl-carousel partnerslist d-flex">
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/tigo.png') }}" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners"></a></li>
-            <li><a href="javascript:void(0);"><img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
+            <li><a href="javascript:void(0);"><img class="img-fluid" src="{{ asset('images/') }}" alt="partners"></a></li>
             </ul>
             </div>
             </div>

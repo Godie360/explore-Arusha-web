@@ -166,31 +166,31 @@
         <div class="container">
           <div class="work-heading">
             <h4>Things To Do in Arusha </h4>
-            <p class="description">Add your business to Listee, so customers can easily find</p>
+            <p class="description">Arusha offers a variety of attractions and activities here are some main things to do in Arusha</p>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt /></a>
                 <h5>01</h5>
                 <h6>Arusha National Park</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <p>Start your safari journey to iconic parks like Serengeti and Ngorongoro. Enjoy breathtaking wildlife and landscapes in their natural habitat.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
                 <h5 class="mt-0">02</h5>
                 <h6>Cultural Heritage Centre</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
-                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+                <p>Discover Tanzanian art, history, and culture. Shop for unique crafts and artifacts, and learn about the local heritage.</p>
+                <a href=""><img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt /></a>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt /></a>
                 <h5>03</h5>
                 <h6>Mount Meru</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <p>Embark on an adventurous hike to Tanzania’s second highest peak. Experience spectacular views and diverse flora and fauna</p>
               </div>
               
             </div>
@@ -198,52 +198,51 @@
           <div class="row">
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/Hot.jpg') }}" class="img-fluid" alt /></a>
                 <h5>04</h5>
                 <h6>Hot Air Balloon Safaris</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <p>Take a unique safari experience with a hot air balloon ride over the Serengeti. Witness wildlife and landscapes from above.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <h5 class="mt-0">07</h5>
+                <h5 class="mt-0">05</h5>
                 <h6>Maasai Market</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
-                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+                <p>Immerse yourself in vibrant Maasai culture. Shop for traditional crafts, jewelry, and clothing, and interact with local artisans.</p>
+                <a href=""><img src="{{ asset('images/masai-market.jpeg') }}" class="img-fluid" alt /></a>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/cofee.avif') }}" class="img-fluid" alt /></a>
                 <h5>06</h5>
                 <h6>Coffee Plantation Tours</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
-              </div>
+                <p>Visit coffee plantations to learn about cultivation and processing. Enjoy sampling freshly brewed coffee in a scenic setting.</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/National-aprk.webp') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/duluti2.webp') }}" class="img-fluid" alt /></a>
                 <h5>08</h5>
-                <h6>Hot Air Balloon Safaris</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <h6>Lake Duluti</h6>
+                <p> Relax by this serene lake with boat rides and bird watching. Ideal for a peaceful picnic in a tranquil environment.</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
                 <h5 class="mt-0">09</h5>
-                <h6>Maasai Market</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
-                <img src="{{ asset('images/Cultural-heritage.jpg.webp') }}" class="img-fluid" alt />
+                <h6>Cultural Experiences</h6>
+                <p>Visit local villages and engage with the Maasai tribes. Participate in cultural activities and gain insight into traditional lifestyles.</p>
+                <a href=""><img src="{{ asset('images/Mto-Wa-Mbu-Cultural-Tour.jpg') }}" class="img-fluid" alt /></a>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 d-flex">
               <div class="work-info card">
-                <img src="{{ asset('images/MERU2.jpeg') }}" class="img-fluid" alt />
+                <a href=""><img src="{{ asset('images/pool-side.jpg') }}" class="img-fluid" alt /></a>
                 <h5>10</h5>
-                <h6>Coffee Plantation Tours</h6>
-                <p>Morbi nisi justo, venenatis ac nibh at, bibendum mattis risus. Maecenas tincidunt, ligula sed congue tempus, magna augue cursus ipsum, in malesuada justo risus nec lorem. Nam augue augue, mollis nec condimentum euismod, lacinia ultricies leo.</p>
+                <h6>Dining and Relaxation</h6>
+                <p>Enjoy a variety of local cuisines in Arusha’s hotels and resorts. Unwind after a day of exploration in comfortable settings.</p>
               </div>
             </div>
           </div>
