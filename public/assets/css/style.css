@@ -7895,7 +7895,7 @@ a:focus {
 }
 @media (max-width: 991.98px) {
     .banner-three {
-        background: 0 0;
+        /* background: 0 0; */
         min-height: 630px;
     }
 }
@@ -9490,6 +9490,8 @@ a:focus {
     }
 }
 .activities-blk .row-gap-14 .shadow-box h4 {
+    position: relative;
+    top: -0.1rem;
     font-size: 20px;
     color: #374b5c;
     margin: 0 0 5px;

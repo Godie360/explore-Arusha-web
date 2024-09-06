@@ -10,14 +10,15 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.3",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.0",
-        "santigarcor/laratrust": "^8.3",
         "league/flysystem-aws-s3-v3": "^3.2",
-        "intervention/image": "^2.7",
+        "livewire/livewire": "^3.0",
+        "phpoffice/phpspreadsheet": "^2.1",
+        "santigarcor/laratrust": "^8.3",
         "yajra/laravel-datatables": "^10.0"
     },
     "require-dev": {

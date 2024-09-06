@@ -105,12 +105,15 @@ class ServicesController extends Controller
 
         $service = ServiceModel::create($request->except('_token'));
         if ($service) {
-            foreach ($request->amenity_ids as $amenity) {
-                ServiceAmenityModel::create([
-                    'service_id' => $service->id,
-                    'amenity_id' => $amenity,
-                ]);
+            if(isset($request->amenity_ids)){
+                foreach ($request->amenity_ids as $amenity) {
+                    ServiceAmenityModel::create([
+                        'service_id' => $service->id,
+                        'amenity_id' => $amenity,
+                    ]);
+                }
             }
+            
             patchFile($service, ServiceModel::class, "id", false, "attachments");
         }
         DB::commit();

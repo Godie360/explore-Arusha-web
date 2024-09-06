@@ -204,7 +204,7 @@ return new class extends Migration
             $table->foreign("category_id")->references("id")->on("categories")->cascadeOnDelete()->cascadeOnUpdate();
             $table->string("sub_category_id");
             $table->foreign("sub_category_id")->references("id")->on("sub_categories")->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string("currency_id");
+            $table->string("currency_id")->nullable();
             $table->foreign("currency_id")->references("id")->on("currencies")->cascadeOnDelete()->cascadeOnUpdate();
             $table->string("company_id");
             $table->foreign("company_id")->references("id")->on("companies");
